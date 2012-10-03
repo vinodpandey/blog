@@ -1,11 +1,10 @@
-
 Installing VIM 7.3 on CentOS with Python 2.7.3 support
 
 Python 2.7 alternate installation
 
 First install some packages for correct python installation
 yum -y groupinstall 'Development Tools'
-yum -y  install openssl-devel* zlib*386 ncurses ncurses-devel
+yum -y  install openssl-devel* zlib*386 ncurses ncurses-devel  (use zlib* relevent to OS)
 
 cd ~/temp
 wget http://python.org/ftp/python/2.7.3/Python-2.7.3.tgz
@@ -23,18 +22,20 @@ add below line (/usr/local/lib should have libpython2.7.so )
 sudo /sbin/ldconfig
 
 
-“ make python2.7 as default python in bash profile – for vim setup
+" make python2.7 as default python in bash profile ï¿½ for vim setup
 mkdir -p ~/bin
 ln -s /usr/bin/python2.7 ~/bin/python
 # Append to the end of ~/.bashrc for persistence
 export PATH=$HOME/bin:$PATH
-“ refresh bashrc
+" refresh bashrc
 source ~/.bashrc
 
-append('/usr/local/lib', '/etc/ld.so.conf.d/python2.7.conf', use_sudo = True) 
-sudo('/sbin/ldconfig')
+sudo vim /etc/ld.so.conf.d/python2.7.conf 
+add below line
+'/usr/local/lib' 
+sudo '/sbin/ldconfig'
 
-python –V (should now return 2.7.3)
+python -V (should now return 2.7.3)
 
 
 mkdir -p ~/temp
@@ -60,13 +61,10 @@ syntax on
 filetype plugin indent on
 
 VIM Plugins
+
 NERDTree:
 cd ~/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree.git
-
-
-
-
 
 .vimrc entries:
 " NERDTree configuration
@@ -90,10 +88,8 @@ python-mode
 cd ~/.vim/bundle
 git clone git://github.com/klen/python-mode.git
 
-Then rebuild helptags in vim:
-:helptags ~/.vim/doc/
 
-“ map Ctrl+ space for omni completion
+" map Ctrl+ space for omni completion
 imap <C-Space> <C-x><C-o>
 imap <C-@> <C-Space>
 
@@ -101,7 +97,7 @@ imap <C-@> <C-Space>
 Omni completion
 .vimrc
 -------------
-“ Omni completion
+" Omni completion
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
