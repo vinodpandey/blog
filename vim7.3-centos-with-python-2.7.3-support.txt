@@ -131,3 +131,17 @@ VIM Paste issue:
 :set paste
 Press  'i' to switch to insert mode and paste the lines
 :set nopaste
+
+Note:
+=========
+1. /site-packages/Crypto/Util/number.py:57 will give warning message. A not to recommended method is to comment this line :).
+2. python-mode plugin expects that the virtual environment will have the same python version that is used for vim installaion
+with python support. e.g. above we used python 2.7, python-mode virtual environment expects python2.7. 
+[:call pymode#troubleshooting#Test() shows python2.7 path for virtual environments created with any version of python]
+3. Rope completion is very slow
+https://github.com/klen/python-mode/#rope-completion-is-very-slow
+-Disable g:pymode_rope_guess_project to make rope always create .ropeproject in current dir.
+-Delete .ropeproject from dip parent dir to make rope create .ropeproject in current dir.
+-Press <C-x>po or :RopeOpenProject to make force rope create .ropeproject in current dir.
+
+
