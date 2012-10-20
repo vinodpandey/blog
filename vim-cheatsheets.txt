@@ -1,0 +1,25 @@
+VIM Cheatsheet
+==============
+
+
+Window Splits
+=============
+Vertical Split : Ctrl+w + v
+Horizontal Split: Ctrl+w + s
+Close current windows: Ctrl+w + q
+
+Paste
+=========
+:set paste
+Paste content
+:set nopaste
+
+Insert new line 
+===============
+o
+
+Undo changes
+============
+:undolist
+g- to 'go back in time'
+g+ to 'go forward in time'
