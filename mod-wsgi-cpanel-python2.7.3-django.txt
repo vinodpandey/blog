@@ -1,1 +1,50 @@
-mod-wsgi
+
+1. Install alternate python 2.7.3
+https://raw.github.com/vinodpandey/blog/master/virtualenv-python2.7.3.sh
+
+2. compiling mod_wsgi
+wget http://modwsgi.googlecode.com/files/mod_wsgi-3.4.tar.gz
+tar zxvf mod_wsgi-3.4.tar.gz
+cd mod_wsgi-3.4
+./configure --with-python=/usr/local/bin/python2.7
+make
+make install
+
+module location: /usr/local/apache/modules/mod_wsgi.so
+
+3. apache conf
+WHM -> Server Configuration -> ApacheConfiguration -> Include Editor -> Pre Main Include-> Include Editor
+
+LoadModule wsgi_module /usr/local/apache/modules/mod_wsgi.so
+AddHandler wsgi-script .wsgi
+
+4. virtualhost setting file 
+$ mkdir -p /usr/local/apache/conf/userdata/std/2/user/website.com
+$ vi /usr/local/apache/conf/userdata/std/2/user/website.com/vhost.conf
+
+
+vhost.conf
+----------------
+
+<IfModule mod_alias.c>
+    Alias /cgi-bin /home/cbseguid/public_html/cgi-bin
+</IfModule>
+<IfModule mod_wsgi.c>
+# See the link below for an introduction about this mod_wsgi config.
+# http://groups.google.com/group/modwsgi/browse_thread/thread/60cb0ec3041ac1bc/2c547b701c4d74aa
+
+WSGIScriptAlias / /home/user/webapps/website.com/project/config/project.wsgi
+WSGIDaemonProcess user processes=7 threads=1 display-name=%{GROUP}
+WSGIProcessGroup user
+WSGIApplicationGroup %{GLOBAL}
+</IfModule>
+
+
+ErrorDocument 401 "Authentication Error"
+ErrorDocument 403 "Forbidden"
+
+----------------
+
+5. Reload config
+$ /scripts/verify_vhost_includes
+$ /scripts/ensure_vhost_includes --user=username
