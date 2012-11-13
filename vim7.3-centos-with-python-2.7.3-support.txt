@@ -145,3 +145,9 @@ https://github.com/klen/python-mode/#rope-completion-is-very-slow
 -Press <C-x>po or :RopeOpenProject to make force rope create .ropeproject in current dir.
 
 
+
+Ctrl-W s for horizontal splitting
+Ctrl-W v for vertical splitting
+Ctrl-w q to close one
+
+
