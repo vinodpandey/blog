@@ -15,6 +15,9 @@ cd /media/VBOXADDITIONS_4.2.6_82870
 ./VBoxLinuxAdditions.run
 Restart VM
 
+Devices > Shared Clipboard > Bidirectional
+Devices > Drag'n'drop > Bidirectional
+
 add user to sudo group
 -------------------------
 vi /etc/sudoers
