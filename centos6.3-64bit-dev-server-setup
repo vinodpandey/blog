@@ -1,1 +1,19 @@
-initial draft
+
+VirtualBox-4.2.6-82870-Win
+CentOS-6.3-x86_64-LiveDVD.iso
+
+Run the LIVE CD & install to Disk
+applications > System Tools > Terminal > /usr/bin/liveinst
+
+Network Adapters > Bridged Adapter
+System > Administration > Firewall - Disable (for accessing website outside VM)
+
+Guest Additions
+----------------
+yum install gcc kernel-devel-2.6.32-279.el6.x86_64
+Devices > Install Guest Additions
+cd /media/VBOXADDITIONS_4.2.6_82870
+./VBoxLinuxAdditions.run
+Restart VM
+
+add user to sudo group
