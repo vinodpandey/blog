@@ -7,7 +7,7 @@
 # chmod +x virtualenv-python2.7.3.sh
 # ./virtualenv-python2.7.3.sh
 # source bin/activate
-# python -version
+# python --version
 # deactivate
 # test will now have virtual environment created with Python 2.7.3
 
