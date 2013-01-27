@@ -23,3 +23,33 @@ Undo changes
 :undolist
 g- to 'go back in time'
 g+ to 'go forward in time'
+
+
+NERDTree tutorial:-
+Ctrl+n - Show/hide nerdtree window
+Bookmark <name> [Bookmark current folder with name as bookmark name]
+D Delete the current bookmark
+
+To create files/folder in NERDTree view
+press m when on the folder and NERDTree filesystem menu pops up
+a add a child node
+m move the current node
+d delete the current node
+node can be a file or a directory. For directory, add a '/' at the end.
+
+
+
+Ctrl-W s for horizontal splitting
+Ctrl-W v for vertical splitting
+Ctrl-w q to close one
+
+MiniBufExplorer
+======================
+Buffers are visible at the top of the screen
+Use Ctrl+ww to move to tab
+
+SnipMate
+==========
+Write text (say doctype) in file with extension html and press Tab to see the sinppet load
+
+
