@@ -3,6 +3,8 @@
 # inside that directory
 # mkdir test
 # cd test
+# wget --no-check-certificate -O virtualenv-python2.7.3.sh https://raw.github.com/vinodpandey/blog/master/virtualenv-python2.7.3.sh
+# chmod +x virtualenv-python2.7.3.sh
 # ./virtualenv-python2.7.3.sh
 # test will now have virtual environment created with Python 2.7.3
 
