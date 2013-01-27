@@ -1,3 +1,4 @@
+VirtualBox-4.2.6-82870-Win
 CentOS-6.3-x86_64-LiveDVD.iso
 
 Run the LIVE CD & install to Disk
@@ -23,3 +24,9 @@ vi /etc/sudoers
 uncomment - 
 # %wheel ALL=(ALL)   NOPASSWD:ALL
 usermod -a -G wheel dmadmin
+
+VIM Setup with python support
+==============================
+https://github.com/vinodpandey/blog/blob/master/vim7.3-centos-with-python-2.7.3-support.txt
+
+
