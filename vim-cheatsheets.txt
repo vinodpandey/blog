@@ -39,9 +39,6 @@ node can be a file or a directory. For directory, add a '/' at the end.
 
 
 
-Ctrl-W s for horizontal splitting
-Ctrl-W v for vertical splitting
-Ctrl-w q to close one
 
 MiniBufExplorer
 ======================
