@@ -68,11 +68,6 @@ wget --no-check-certificate -O ~/.vimrc https://raw.github.com/vinodpandey/blog/
 
 
 
-VIM Paste issue:
-:set paste
-Press  'i' to switch to insert mode and paste the lines
-:set nopaste
-
 Note:
 =========
 1. /site-packages/Crypto/Util/number.py:57 will give warning message. A not to recommended method is to comment this line :).
@@ -86,9 +81,5 @@ https://github.com/klen/python-mode/#rope-completion-is-very-slow
 -Press <C-x>po or :RopeOpenProject to make force rope create .ropeproject in current dir.
 
 
-
-Ctrl-W s for horizontal splitting
-Ctrl-W v for vertical splitting
-Ctrl-w q to close one
 
 
