@@ -1,0 +1,38 @@
+Installing xclip for copy to clipboard
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+sudo rpm -Uvh epel-release*rpm
+sudo yum -y install xclip
+
+github - adding ssh key - use xclip in place of clip
+xclip -sel clip < ~/.ssh/id_rsa.pub
+https://help.github.com/articles/generating-ssh-keys
+
+
+======================
+Github 
+=====================
+git status
+git commit -m "Comment text"
+git branch
+git remote -v
+git pull
+git push origin master
+origin - remote branch
+master - local branch
+
+==
+
+git add file_name
+git commit -m "message"
+git pull
+git push origin master
+===
+Solving conflicts
+------------------
+git pull
+- error message - conflict error in files
+fix the local conflicts and files
+commit the changes in files with conflict (git commit ..)
+git push origin master
+=========================
+
