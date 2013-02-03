@@ -41,6 +41,60 @@ Add - hello world
 sudo vim /etc/hosts
 127.0.0.1 example.com
 
+
+mod_wsgi installation
+=====================
+Install alternate python 2.7.3
+https://raw.github.com/vinodpandey/blog/master/virtualenv-python2.7.3.sh
+if /usr/sbin/apxs does not exists, install httpd-devel
+
+compiling mod_wsgi
+mkdir -p ~/tmp
+cd ~/tmp
+wget http://modwsgi.googlecode.com/files/mod_wsgi-3.4.tar.gz
+tar zxvf mod_wsgi-3.4.tar.gz
+cd mod_wsgi-3.4
+./configure --with-python=/usr/local/bin/python2.7
+make
+sudo make install
+
+module location: /usr/lib64/httpd/modules/mod_wsgi.so
+
+sudo vim /etc/httpd/conf/httpd.conf
+Add below:
+LoadModule wsgi_module /usr/lib64/httpd/modules/mod_wsgi.so
+AddHandler wsgi-script .wsgi
+
+sudo /etc/init.d/httpd restart
+
+testing mod-wsgi
+----------------
+sudo vim /var/www/example.com/cgi-bin/project.wsgi
+def application(environ, start_response):
+    status = '200 OK'
+    output = 'Hello World!'
+    response_headers = [('Content-type', 'text/plain'),
+                        ('Content-Length', str(len(output)))]
+    start_response(status, response_headers)
+    return [output]
+
+sudo chmod +x project.wsgi 
+
+sudo vim /etc/httpd/conf.d/example.com.vhost.conf
+<VirtualHost *:80>
+    ServerName example.com
+    ServerAlias example.com
+    DocumentRoot /var/www/example.com
+     <Directory /var/www/example.com>
+	    Options +ExecCGI
+    </Directory> 
+</VirtualHost>
+
+sudo /etc/init.d/httpd restart
+Access - http://example.com/project.wsgi
+
+
+
 Ref:
 http://library.linode.com/lamp-guides/centos-6
 http://articles.slicehost.com/2010/5/19/installing-apache-on-centos
