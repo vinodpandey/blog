@@ -27,15 +27,15 @@ vhost.conf
 ----------------
 
 <IfModule mod_alias.c>
-    Alias /cgi-bin /home/cbseguid/public_html/cgi-bin
+    Alias /cgi-bin /home/website/public_html/cgi-bin
 </IfModule>
 <IfModule mod_wsgi.c>
 # See the link below for an introduction about this mod_wsgi config.
 # http://groups.google.com/group/modwsgi/browse_thread/thread/60cb0ec3041ac1bc/2c547b701c4d74aa
 
 WSGIScriptAlias / /home/user/webapps/website.com/project/config/project.wsgi
-WSGIDaemonProcess user processes=7 threads=1 display-name=%{GROUP}
-WSGIProcessGroup user
+WSGIDaemonProcess username processes=7 threads=1 display-name=%{GROUP}
+WSGIProcessGroup username
 WSGIApplicationGroup %{GLOBAL}
 </IfModule>
 
