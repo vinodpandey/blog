@@ -48,3 +48,14 @@ ErrorDocument 403 "Forbidden"
 5. Reload config
 $ /scripts/verify_vhost_includes
 $ /scripts/ensure_vhost_includes --user=username
+
+
+=============
+There was a problem importing one of the Python modules
+required to run yum. The error leading to this problem was:
+No module named tempfile
+=============
+"You could try setting it before running yum to see if that helps at all:"
+export PYTHONPATH=/usr/lib/python2.6/site-packages
+
+http://www.rackspace.com/knowledge_center/comment/158106#comment-158106
