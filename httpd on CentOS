@@ -17,7 +17,7 @@ Run apache on system boot
 /sbin/chkconfig --levels 235 httpd on
 
 Name based virtual hosts
-sudo vim 
+sudo vim /etc/httpd/conf/httpd.conf
 uncomment - NameVirtualHost *:80
 Add:
 <VirtualHost *:80>
@@ -36,6 +36,7 @@ sudo vim /etc/httpd/conf.d/example.com.vhost.conf
 </VirtualHost>
 mkdir -p /var/www/example.com
 sudo vim index.html
+Add - hello world
 
 sudo vim /etc/hosts
 127.0.0.1 example.com
