@@ -1,0 +1,27 @@
+httpd server
+======================
+
+Config file: /etc/httpd/conf/httpd.conf
+Log file: 
+Error log: /etc/httpd/logs/error_log
+Access log: /etc/httpd/logs/access_log
+
+Installation:
+yum update
+yum install httpd
+
+Start/Stop
+sudo /etc/init.d/httpd start/stop/status/reload
+
+Run apache on system boot
+/sbin/chkconfig --levels 235 httpd on
+
+Name based virtual hosts
+
+
+
+Ref:
+http://library.linode.com/lamp-guides/centos-6
+http://articles.slicehost.com/2010/5/19/installing-apache-on-centos
+
+
