@@ -1,0 +1,28 @@
+mysql
+======
+
+installation
+sudo yum -y install mysql-server
+
+config: /etc/my.cnf
+
+start/stop server
+sudo /etc/init.d/mysqld start/stop/status
+
+start mysql on server boot
+sudo /sbin/chkconfig --levels 235 mysqld on
+
+set password
+sudo /usr/bin/mysqladmin -u root password 'new-password'
+
+test
+mysql -u root -pnew-password
+
+phpmyadmin installation
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+sudo rpm -Uvh epel-release*rpm
+sudo yum -y install phpmyadmin
+
+sudo /etc/init.d/httpd restart
+
+Access: http://localhost/phpmyadmin/
