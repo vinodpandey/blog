@@ -22,7 +22,15 @@ Undo changes
 ============
 :undolist
 g- to 'go back in time'
+
 g+ to 'go forward in time'
+
+Copy/paste between files
+========================
+Visual mode (Esc + v)
+y - yank (copy) marked text
+
+p - put (paste) the clipboard after cursor
 
 
 NERDTree tutorial:-
