@@ -37,5 +37,8 @@ mysql
 ======
 https://github.com/vinodpandey/blog/blob/master/mysql-on-centos
 
+ssh 
+=====
+sudo /etc/init.d/sshd start
 
 
