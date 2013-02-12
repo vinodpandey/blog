@@ -41,4 +41,7 @@ ssh
 =====
 sudo /etc/init.d/sshd start
 
+putty timeout issue
+--------------------
+http://www.smerret.com/computers/linux/how-to-prevent-an-ssh-timeout-in-putty
 
