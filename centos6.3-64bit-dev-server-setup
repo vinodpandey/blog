@@ -5,7 +5,7 @@ Run the LIVE CD & install to Disk
 applications > System Tools > Terminal > /usr/bin/liveinst
 
 Network Adapters > Bridged Adapter
-System > Administration > Firewall - Disable (for accessing website outside VM)
+
 
 Guest Additions
 ----------------
@@ -45,3 +45,8 @@ putty timeout issue
 --------------------
 http://www.smerret.com/computers/linux/how-to-prevent-an-ssh-timeout-in-putty
 
+Disable firewall (for accessing website outside VM)
+---------------------------------------------------
+sudo /etc/init.d/iptables save
+sudo /etc/init.d/iptables stop
+sudo chkconfig iptables off
