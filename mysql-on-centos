@@ -2,7 +2,7 @@ mysql
 ======
 
 installation
-sudo yum -y install mysql-server
+sudo yum -y install mysql-server mysql-devel
 
 config: /etc/my.cnf
 
