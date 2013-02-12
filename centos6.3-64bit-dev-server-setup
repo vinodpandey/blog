@@ -40,6 +40,7 @@ https://github.com/vinodpandey/blog/blob/master/mysql-on-centos
 ssh 
 =====
 sudo /etc/init.d/sshd start
+sudo chkconfig sshd on
 
 putty timeout issue
 --------------------
