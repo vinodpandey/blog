@@ -7,6 +7,14 @@ github - adding ssh key - use xclip in place of clip
 xclip -sel clip < ~/.ssh/id_rsa.pub
 https://help.github.com/articles/generating-ssh-keys
 
+Git in 15 minutes
+http://try.github.com/levels/1/challenges/1
+
+Branching Demo
+http://pcottle.github.com/learnGitBranching/
+http://pcottle.github.com/learnGitBranching/?demo
+
+
 
 ======================
 Github 
