@@ -80,7 +80,8 @@ https://github.com/klen/python-mode/#rope-completion-is-very-slow
 -Disable g:pymode_rope_guess_project to make rope always create .ropeproject in current dir.
 -Delete .ropeproject from dip parent dir to make rope create .ropeproject in current dir.
 -Press <C-x>po or :RopeOpenProject to make force rope create .ropeproject in current dir.
-
+4. Adding a directory to python path
+export PYTHONPATH=$PYTHONPATH:$PWD
 
 
 
