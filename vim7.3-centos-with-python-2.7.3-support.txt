@@ -49,6 +49,7 @@ wget --no-check-certificate -O ~/.vim/autoload/pathogen.vim https://raw.github.c
 #NERDTree
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 #Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
+#http://www.youtube.com/watch?v=67OZNp9Z0CQ
 git clone git://github.com/klen/python-mode.git ~/.vim/bundle/python-mode
 #MiniBufExplorer
 git clone git://github.com/fholgado/minibufexpl.vim.git ~/.vim/bundle/minibufexpl.vim
