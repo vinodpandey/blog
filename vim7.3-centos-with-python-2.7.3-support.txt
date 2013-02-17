@@ -60,13 +60,18 @@ git clone https://github.com/tomtom/tlib_vim.git ~/.vim/bundle/tlib_vim
 git clone https://github.com/MarcWeber/vim-addon-mw-utils.git ~/.vim/bundle/vim-addon-mw-utils
 git clone https://github.com/honza/snipmate-snippets.git ~/.vim/bundle/snipmate-snippets
 
+#bash shell inside vim
+
+
 Get .vimrc
 wget --no-check-certificate -O ~/.vimrc https://raw.github.com/vinodpandey/blog/master/.vimrc
-
-
-
-
-
+wget -O ~/.vim/bundle/conque_2.3.tar.gz http://conque.googlecode.com/files/conque_2.3.tar.gz
+tar zxf conque_2.3.tar.gz
+rm -rf conque_2.3.tar.gz
+Usage:
+:ConqueTerm bash
+:ConqueTermSplit bash
+:ConqueTermVSplit bash
 
 
 Note:
