@@ -21,3 +21,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#CompleteCpp
 
+" Conque - bash inside Vim
+map <C-b> :ConqueTermSplit bash<CR>
+
+
