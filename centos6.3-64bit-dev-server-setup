@@ -1,6 +1,9 @@
 VirtualBox-4.2.6-82870-Win
 CentOS-6.3-x86_64-LiveDVD.iso
 
+Disable screensaver
+System > preference > Screensaver - uncheck "Screensaver active when computer idle"
+
 Run the LIVE CD & install to Disk
 applications > System Tools > Terminal > /usr/bin/liveinst
 
