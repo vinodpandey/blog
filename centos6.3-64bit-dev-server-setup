@@ -10,6 +10,10 @@ applications > System Tools > Terminal > /usr/bin/liveinst
 Network Adapters > Bridged Adapter
 Restart VM for network change to take effect
 
+Disable screensave in new VM
+System > preference > Screensaver - uncheck "Screensaver active when computer idle"
+
+
 Guest Additions
 ----------------
 yum install gcc kernel-devel
