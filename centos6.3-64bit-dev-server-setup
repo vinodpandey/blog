@@ -1,10 +1,17 @@
 VirtualBox-4.2.6-82870-Win
 CentOS-6.3-x86_64-LiveDVD.iso
 
+Disable screensaver
+System > preference > Screensaver - uncheck "Screensaver active when computer idle"
+
 Run the LIVE CD & install to Disk
 applications > System Tools > Terminal > /usr/bin/liveinst
 
 Network Adapters > Bridged Adapter
+Restart VM for network change to take effect
+
+Disable screensave in new VM
+System > preference > Screensaver - uncheck "Screensaver active when computer idle"
 
 
 Guest Additions
@@ -12,7 +19,7 @@ Guest Additions
 yum install gcc kernel-devel-2.6.32-279.el6.x86_64
 Devices > Install Guest Additions
 cd /media/VBOXADDITIONS_4.2.6_82870
-./VBoxLinuxAdditions.run
+sudo ./VBoxLinuxAdditions.run
 Restart VM
 
 Devices > Shared Clipboard > Bidirectional
@@ -51,3 +58,16 @@ Disable firewall (for accessing website outside VM)
 sudo /etc/init.d/iptables save
 sudo /etc/init.d/iptables stop
 sudo chkconfig iptables off
+
+
+key-based-login-to-machine
+---------------------------
+1. Create a key-pair on local machine
+ssh-keygen -t rsa -C "your_email@example.com"
+
+2. Copy public key to remote server
+on mac - brew install ssh-copy-id
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote-host
+
+3. login to remote server
+ssh user@remote-host

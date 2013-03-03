@@ -4,7 +4,7 @@ First install some packages for correct python installation
 ===========================================================
 sudo yum -y groupinstall 'Development Tools'
 sudo yum -y  install openssl-devel zlib ncurses ncurses-devel
-mkdir -p temp
+mkdir -p ~/temp
 cd ~/temp
 wget http://python.org/ftp/python/2.7.3/Python-2.7.3.tgz
 tar zxvf Python-2.7.3.tgz
@@ -66,6 +66,7 @@ git clone https://github.com/honza/snipmate-snippets.git ~/.vim/bundle/snipmate-
 Get .vimrc
 wget --no-check-certificate -O ~/.vimrc https://raw.github.com/vinodpandey/blog/master/.vimrc
 wget -O ~/.vim/bundle/conque_2.3.tar.gz http://conque.googlecode.com/files/conque_2.3.tar.gz
+cd ~/.vim/bundle
 tar zxf conque_2.3.tar.gz
 rm -rf conque_2.3.tar.gz
 Usage:
