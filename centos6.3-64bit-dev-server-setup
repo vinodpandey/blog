@@ -58,3 +58,16 @@ Disable firewall (for accessing website outside VM)
 sudo /etc/init.d/iptables save
 sudo /etc/init.d/iptables stop
 sudo chkconfig iptables off
+
+
+key-based-login-to-machine
+---------------------------
+1. Create a key-pair on local machine
+ssh-keygen -t rsa -C "your_email@example.com"
+
+2. Copy public key to remote server
+on mac - brew install ssh-copy-id
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote-host
+
+3. login to remote server
+ssh user@remote-host
