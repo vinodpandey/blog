@@ -7,8 +7,8 @@ Error log: /etc/httpd/logs/error_log
 Access log: /etc/httpd/logs/access_log
 
 Installation:
-yum update
-yum install httpd
+sudo yum update
+sudo yum -y install httpd
 
 Start/Stop
 sudo /etc/init.d/httpd start/stop/status/reload
