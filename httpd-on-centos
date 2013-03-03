@@ -14,7 +14,7 @@ Start/Stop
 sudo /etc/init.d/httpd start/stop/status/reload
 
 Run apache on system boot
-/sbin/chkconfig --levels 235 httpd on
+sudo /sbin/chkconfig --levels 235 httpd on
 
 Name based virtual hosts
 sudo vim /etc/httpd/conf/httpd.conf
