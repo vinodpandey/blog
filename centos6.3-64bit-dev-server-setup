@@ -16,10 +16,10 @@ System > preference > Screensaver - uncheck "Screensaver active when computer id
 
 Guest Additions
 ----------------
-yum install gcc kernel-devel
+yum install gcc kernel-devel-2.6.32-279.el6.x86_64
 Devices > Install Guest Additions
 cd /media/VBOXADDITIONS_4.2.6_82870
-./VBoxLinuxAdditions.run
+sudo ./VBoxLinuxAdditions.run
 Restart VM
 
 Devices > Shared Clipboard > Bidirectional
