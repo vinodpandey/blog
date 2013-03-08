@@ -10,6 +10,12 @@ applications > System Tools > Terminal > /usr/bin/liveinst
 Network Adapters > Bridged Adapter
 Restart VM for network change to take effect
 
+If using NAT for Network Adapters
+Port should be > 1024
+Host: 127.0.0.1 Host Port: 2222 Guest IP: 10.0.2.15 Guest Port:22
+http://superuser.com/questions/323424/unable-to-do-port-forwarding-in-virtual-box
+http://www.virtualbox.org/manual/ch06.html
+
 Disable screensave in new VM
 System > preference > Screensaver - uncheck "Screensaver active when computer idle"
 
