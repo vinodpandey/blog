@@ -2,6 +2,8 @@ VIM Cheatsheet
 ==============
 
 
+x - delete character
+
 Window Splits
 =============
 Vertical Split : Ctrl+w + v
