@@ -1,6 +1,6 @@
 using vagrant
 
-https://speakerdeck.com/lewg/consistent-local-development-with-vagrant-and-chef
+
 
 Installation
 -------------
@@ -25,7 +25,8 @@ vagrant box add centos6.3x64 https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3
 
 Reference:-
 1. http://docs.vagrantup.com/v2/getting-started/boxes.html
-
+2. http://blog.smalleycreative.com/tutorials/setup-a-django-vm-with-vagrant-virtualbox-and-chef/
+3. https://speakerdeck.com/lewg/consistent-local-development-with-vagrant-and-chef
 
 
 
