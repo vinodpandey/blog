@@ -1,3 +1,31 @@
 using vagrant
 
 https://speakerdeck.com/lewg/consistent-local-development-with-vagrant-and-chef
+
+Installation
+-------------
+Install vagrant 
+http://downloads.vagrantup.com/tags/v1.1.0
+
+vagrant -v (should return Vagrant version 1.1.0)
+
+all available command options
+vagrant help
+
+Add Boxes 
+---------
+Add boxes to local machines (can be resused in multiple projects)
+
+Vagrant box location (added using vagrant box add):
+Mac/Linux
+~/.vagrant.d/boxes
+
+vagrant box add centos6.3x64 https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box
+
+
+Reference:-
+1. http://docs.vagrantup.com/v2/getting-started/boxes.html
+
+
+
+
