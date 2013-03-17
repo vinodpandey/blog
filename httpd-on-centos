@@ -16,6 +16,9 @@ sudo /etc/init.d/httpd start/stop/status/reload
 Run apache on system boot
 sudo /sbin/chkconfig --levels 235 httpd on
 
+Enable .htaccess in website folder
+Allowoverride All (in httpd.con for /var/www/html)
+ 
 Name based virtual hosts
 sudo vim /etc/httpd/conf/httpd.conf
 uncomment - NameVirtualHost *:80
