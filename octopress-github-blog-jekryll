@@ -73,11 +73,7 @@ move source/blog/archives to source/archives
 remove /blog from /source
 edit source/_includes/custom/navigation.html. Replace /blog/archives by /archives
 
-c. removing date from post url
-Edit - Rakefile
-filename = "#{source_dir}/#{posts_dir}/#{title.to_url}.#{new_post_ext}"
-
-d. updating octopress
+c. updating octopress
 switch to source branch
 git pull octopress master     
 bundle install                
