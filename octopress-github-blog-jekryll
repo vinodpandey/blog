@@ -1,0 +1,159 @@
+
+Blogging with octopress + github (cents 6.2)
+--------------------------------------------
+Initial setup 
+--------------
+1. Install git
+
+2. Install RVM (Ruby Version Manager)
+[command-line tool to install, manage and work with multiple ruby environments]
+curl -L --insecure https://get.rvm.io | bash -s stable --ruby
+
+3. Install Ruby 1.9.3
+rvm install 1.9.3
+/bin/bash --login
+rvm use 1.9.3
+rvm rubygems latest
+ruby --version (should be 1.9.3 now)
+
+Fixing: It seems your ruby installation is missing psych (for YAML output).
+cd ~/.rvm/archives
+wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+rvm reinstall 1.9.3 
+if there are compile errors -
+rvm reinstall 1.9.3 --with-gcc=clang
+Ref: http://stackoverflow.com/questions/9880855/fixing-the-ruby-installation-is-missing-psych-error
+
+4. Configure Octopress
+git clone git://github.com/imathis/octopress.git octopress
+cd octopress    # You'll be asked if you trust the .rvmrc file (say yes).
+[octopress] ruby --version  # Ruby 1.9.3
+ installing dependencies
+[octopress] gem install bundler
+[octopress] bundle install
+install default octopress theme
+[octopress] rake install
+
+5. Deploying to github pages
+create repository username.github.com
+[octopress] rake setup_github_pages
+[octopress] rake generate
+[octopress] rake deploy
+
+6. commit source of blog
+[octopress] git add .
+[octopress] git commit -m 'your message'
+[octopress] git push origin source
+
+7. Custom domain
+[octopress] echo 'vinodpandey.com' >> source/CNAME
+publish changes to github (master)
+[octopress] rake generate
+[octopress] rake deploy
+
+commit source
+[octopress] git add .
+[octopress] git commit -m 'domain name'
+[octopress] git push origin source
+
+point A record for the domain to 207.97.227.245
+
+8. Little tweaking
+a. Blog configuration
+_config.yml
+url
+title
+subtitle
+author
+
+permalink: /:title/ (remove /blog from URL)
+category_dir: categories 
+
+b. changing /blog/archives to /archives
+move source/blog/archives to source/archives
+remove /blog from /source
+edit source/_includes/custom/navigation.html. Replace /blog/archives by /archives
+
+c. removing date from post url
+Edit - Rakefile
+filename = "#{source_dir}/#{posts_dir}/#{title.to_url}.#{new_post_ext}"
+
+d. updating octopress
+switch to source branch
+git pull octopress master     
+bundle install                
+rake update_source           
+rake update_style
+
+
+Blogging with the new setup
+-----------------------------
+1. Execute step 1, 2 & 3 (if required) from previous instruction
+git --version
+ruby --version (should be 1.9.3)
+if ruby version is not 1.9.3
+/bin/bash --login
+rvm use 1.9.3
+ruby --version (should be 1.9.3 now)
+
+2. get latest repository
+git clone git@github.com:vinodpandey/vinodpandey.github.com.git git-blog
+
+
+3. Switch to source branch
+git checkout source
+ruby --version (should be 1.9.3)
+if ruby version does not match
+rvm use 1.9.3 (if it throws error, use /bin/bash --login first)
+ruby --version (should be 1.9.3 now)
+
+4. Create/edit posts
+creating new post
+rake new_post["Sample Post"]
+
+creating new page
+rake new_page["Sample Page"]
+
+editing posts
+every post is inside source/_posts directory
+
+
+5. Generate & Preview blog
+rake preview (Accessible at http://localhost:4000)
+all the edit/delete can be done in source/_posts. 
+
+killing any previous instances
+ps aux | grep race  
+process - ../gems/ruby1.9.3…./bin/rackup
+
+6. Publish posts
+rake generate
+rake deploy
+
+7. Commit source
+git add .
+git commit -m 'your message'
+git push origin source
+
+
+Blogging workflow
+------------------
+1. Switch to source branch
+2. Create/edit posts
+3. Preview
+4. Generate & Publish
+5. Commit source
+
+
+Using Cloud9 (https://c9.io/) for blogging
+-------------------------------------------
+Execute step 2 onwards from "Blogging with the new setup"
+
+
+Reference:-
+1. http://octopress.org/docs/setup/
+2. http://www.viggiosoft.com/blog/blog/2011/09/28/setting-up-a-blog-with-octopress/
+3. http://shashankmehta.in/archive/2012/github-octopress-and-blogging.html
+4. http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great/
+5. http://www.devopsy.com/blog/2012/10/04/octopress-on-cloud9/
+6. http://www.devopsy.com/blog/2012/10/04/octopress-on-cloud9/
