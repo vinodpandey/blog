@@ -106,7 +106,12 @@ ruby --version (should be 1.9.3 now)
 gem install bundler
 bundle install
 
-5. Create/edit posts
+5. Setup for "rake deploy" task to work
+rake setup_github_pages
+This will override the URL in _config.xml
+git checkout _config.xml (to revert to original file)
+
+6. Create/edit posts
 creating new post
 rake new_post["Sample Post"]
 
@@ -117,7 +122,7 @@ editing posts
 every post is inside source/_posts directory
 
 
-6. Preview blog
+7. Preview blog
 rake preview (Accessible at http://localhost:4000)
 all the edit/delete can be done in source/_posts. 
 
@@ -125,14 +130,21 @@ killing any previous instances
 ps aux | grep race  
 process - ../gems/ruby1.9.3…./bin/rackup
 
-7. Generate & Publish posts
-rake generate
-rake deploy
-
-8. Commit source
+8. Commit source (to check if we have the latest code for blog)
 git add .
 git commit -m 'your message'
 git push origin source
+
+if there are merge conflict or if the code is not latest
+take the latest
+git pull origin source
+fix merge conflict files and checkin th changes
+
+9. Generate & Publish posts
+rake generate
+rake deploy
+
+
 
 
 Blogging workflow
@@ -140,8 +152,9 @@ Blogging workflow
 1. Switch to source branch
 2. Create/edit posts
 3. Preview
-4. Generate & Publish
-5. Commit source
+4. Commit source
+5. Generate & Publish
+
 
 
 Using Cloud9 (https://c9.io/) for blogging
