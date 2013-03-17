@@ -1,4 +1,3 @@
-
 Blogging with octopress + github (cents 6.2)
 --------------------------------------------
 Initial setup 
@@ -107,7 +106,11 @@ if ruby version does not match
 rvm use 1.9.3 (if it throws error, use /bin/bash --login first)
 ruby --version (should be 1.9.3 now)
 
-4. Create/edit posts
+4. Install dependencies (switch to source branch first)
+gem install bundler
+bundle install
+
+5. Create/edit posts
 creating new post
 rake new_post["Sample Post"]
 
@@ -118,7 +121,7 @@ editing posts
 every post is inside source/_posts directory
 
 
-5. Generate & Preview blog
+6. Generate & Preview blog
 rake preview (Accessible at http://localhost:4000)
 all the edit/delete can be done in source/_posts. 
 
@@ -126,11 +129,11 @@ killing any previous instances
 ps aux | grep race  
 process - ../gems/ruby1.9.3…./bin/rackup
 
-6. Publish posts
+7. Publish posts
 rake generate
 rake deploy
 
-7. Commit source
+8. Commit source
 git add .
 git commit -m 'your message'
 git push origin source
