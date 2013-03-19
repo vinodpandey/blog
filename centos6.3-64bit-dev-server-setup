@@ -74,6 +74,8 @@ ssh-keygen -t rsa -C "your_email@example.com"
 2. Copy public key to remote server
 on mac - brew install ssh-copy-id
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote-host
+on a non standard port
+ssh-copy-id -i ~/.ssh/id_rsa.pub '-p 57777 user@remote-host'
 
 3. login to remote server
 ssh user@remote-host
