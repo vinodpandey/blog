@@ -1,0 +1,18 @@
+
+Install cygwin [http://www.redhat.com/services/custom/cygwin/]
+
+Run as administrator
+
+apt-cyg package manager
+wget http://apt-cyg.googlecode.com/svn/trunk/apt-cyg
+chmod +x apt-cyg
+mv apt-cyg /usr/local/bin/
+
+easy_install & pip
+$ wget http://peak.telecommunity.com/dist/ez_setup.py
+$ python ez_setup.py
+$ easy_install pip
+
+virtual environment
+pip install virtualenv
+
