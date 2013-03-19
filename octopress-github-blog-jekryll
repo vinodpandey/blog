@@ -150,6 +150,7 @@ rake deploy
 Blogging workflow
 ------------------
 1. Switch to source branch
+2. Check ruby version (should be 1.9.3, otherwise execute - rvm use 1.9.3)
 2. Create/edit posts
 3. Preview
 4. Commit source
