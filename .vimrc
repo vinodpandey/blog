@@ -2,6 +2,8 @@
 call pathogen#infect()
 syntax on
 filetype plugin indent on
+set backspace=2 " make backspace work like most other apps
+
 
 " NERDTree configuration
 nmap <silent> <c-n> :NERDTreeToggle<CR>
