@@ -13,6 +13,23 @@ Plugins > ConfigServer Security & Firewall
 Firewall configuration
 TCP_IN & TCP_OUT - 9418
 TCP_OUT - 22
+---------------
+check if ssh is working fine
+https://help.github.com/articles/error-permission-denied-publickey
+http://unix.stackexchange.com/questions/48863/ssh-add-complains-could-not-open-a-connection-to-your-authentication-agent
+ssh -vT git@github.com
+
+ssh-add -l
+Could not open a connection to your authentication agent
+eval "$(ssh-agent)"
+ssh-add -l
+Error: Permission denied (publickey)
+ss-add /path/to/key (id_rsa)
+ssh-add -l
+Add the id_rs.pub key to github account
+ssh -vT git@github.com
+Hi vinodpandey! You've successfully authenticated, but GitHub does not provide shell access.
+---------------
 
 
 
