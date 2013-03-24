@@ -11,6 +11,9 @@ https://help.github.com/articles/generating-ssh-keys
 Enabling port for git (TCP 9418) in cpanel
 Plugins > ConfigServer Security & Firewall
 Firewall configuration
+TCP_IN & TCP_OUT - 9418
+TCP_OUT - 22
+
 
 
 Git in 15 minutes
