@@ -7,6 +7,12 @@ github - adding ssh key - use xclip in place of clip
 xclip -sel clip < ~/.ssh/id_rsa.pub
 https://help.github.com/articles/generating-ssh-keys
 
+
+Enabling port for git (TCP 9418) in cpanel
+Plugins > ConfigServer Security & Firewall
+Firewall configuration
+
+
 Git in 15 minutes
 http://try.github.com/levels/1/challenges/1
 
