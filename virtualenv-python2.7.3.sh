@@ -31,7 +31,7 @@ if [[ $(python2.7 -c 'import sys; print(".".join(map(str, sys.version_info[:3]))
     sudo /sbin/ldconfig
     sudo ln -s /usr/local/bin/python2.7 /usr/bin/python2.7
 else
-   echo "Python 2.7.3 present"
+   echo "Python 2.7.X present"
 fi
 
 # check easy_install, if not present, install it
