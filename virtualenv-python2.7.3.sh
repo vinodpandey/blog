@@ -12,7 +12,7 @@
 # test will now have virtual environment created with Python 2.7.3
 
 # check python version, if version 2.7.3 not present, install it
-if [ "$(python2.7 -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')" != "2.7.3" ]; then
+if [[ $(python2.7 -c 'import sys; print(".".join(map(str, sys.version_info[:3])))') != 2.7.* ]]; then
     echo "Installing Python 2.7.3"
     sudo yum -y install zlib zlib-devel gcc httpd-devel
     mkdir -p temp
