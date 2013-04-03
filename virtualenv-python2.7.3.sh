@@ -33,6 +33,7 @@ if [ "$(python2.7 -c 'import sys; print(".".join(map(str, sys.version_info[:3]))
 else
    echo "Python 2.7.3 present"
 fi
+
 # check easy_install, if not present, install it
 if [[ $(easy_install-2.7 --version) != distribute* ]]; then
     echo "Installing easy_install-2.7"
