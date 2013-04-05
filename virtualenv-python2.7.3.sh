@@ -43,7 +43,7 @@ if [[ $(easy_install-2.7 --version) != distribute* ]]; then
     sudo python2.7 setup.py install
     sudo ln -s /usr/local/bin/easy_install-2.7 /usr/bin/easy_install-2.7
     cd ..
-    rm -rf distribute-0.6.35.tar.gz distribute-0.6.35
+    sudo rm -rf distribute-0.6.35.tar.gz distribute-0.6.35
 else
     echo "easy_install-2.7 present"
 fi
@@ -52,6 +52,7 @@ fi
 if [[ $(pip-2.7 --version) != pip* ]]; then
    echo "Installing pip" 
    sudo easy_install-2.7 pip
+   sudo ln -s /usr/local/bin/pip-2.7 /usr/bin/pip-2.7
 else
    echo "pip-2.7 present"
 fi
