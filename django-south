@@ -23,7 +23,7 @@ with django-admin.py
 ----------------------------
 source ../../bin/activate (if not in virtualenv)
 export PYTHONPATH=$PYTHONPATH:$PWD
-django-admin.py ……
+django-admin.py …… --settings=settings.dev
 
 
 Checking out a new project with South migration
