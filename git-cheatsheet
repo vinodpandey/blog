@@ -72,3 +72,18 @@ commit the changes in files with conflict (git commit ..)
 git push origin master
 =========================
 
+
+
+tagging
+---------
+show tags: 
+git tag
+
+create tags (annotated):
+git tag -a v1.4 -m 'version 1.4'
+
+push tags to remote server:
+git push --tags
+
+working on tag: 
+git checkout <tag_name>
