@@ -5,6 +5,7 @@ Converting existing project to south
 --------------------------------------------
 install south
 add south to installed_apps
+./manage.py syncdb
 ./manage.py migrate
 
 
