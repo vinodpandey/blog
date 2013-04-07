@@ -22,7 +22,7 @@ After making changes to model
 with django-admin.py
 ----------------------------
 source ../../bin/activate (if not in virtualenv)
-export PYTHONPATH=$PYTHONPATH:$PWD
+export PYTHONPATH=$PYTHONPATH:$PWD:$PWD/apps
 django-admin.py …… --settings=settings.dev
 
 
