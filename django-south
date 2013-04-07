@@ -1,0 +1,36 @@
+Using south
+-----------------
+
+Converting existing project to south
+--------------------------------------------
+install south
+add south to installed_apps
+./manage.py migrate
+
+
+Using south for an app
+------------------------------
+First time
+./manage.py schemamigration southtut --initial
+./manage.py migrate southtut
+
+After making changes to model
+./manage.py schemamigration southtut --auto
+./manage.py migrate southtut
+
+with django-admin.py
+----------------------------
+source ../../bin/activate (if not in virtualenv)
+export PYTHONPATH=$PYTHONPATH:$PWD
+django-admin.py ……
+
+
+Checking out a new project with South migration
+---------------------------------------------
+./manage.py syncdb
+./manage.py migrate
+
+Deploying changes with South
+-----------------------------
+./manage.py migrate
+
