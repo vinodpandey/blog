@@ -47,6 +47,7 @@ m move the current node
 d delete the current node
 node can be a file or a directory. For directory, add a '/' at the end.
 
+i: Open the selected file in a horizontal split window
 
 
 
