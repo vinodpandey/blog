@@ -41,7 +41,9 @@ Bookmark <name> [Bookmark current folder with name as bookmark name]
 D Delete the current bookmark
 
 To create files/folder in NERDTree view
+--------------------------------------------------------------
 press m when on the folder and NERDTree filesystem menu pops up
+--------------------------------------------------------------
 a add a child node
 m move the current node
 d delete the current node
