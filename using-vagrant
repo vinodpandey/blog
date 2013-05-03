@@ -26,7 +26,7 @@ Vagrant box location (added using vagrant box add):
 Mac/Linux
 ~/.vagrant.d/boxes
 
-vagrant box add centos6.3x64 https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box
+vagrant box add centos-63-x64 http://puppet-vagrant-boxes.s3.amazonaws.com/centos-63-x64.box
 
 
 Reference:-
