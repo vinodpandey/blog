@@ -10,6 +10,14 @@ Vertical Split : Ctrl+w + v
 Horizontal Split: Ctrl+w + s
 Close current windows: Ctrl+w + q
 
+Window Splits
+=============
+- with the setup in https://github.com/vinodpandey/dotvim
+Ctrl + ww to move to the MiniBufExplorer tab
+move cursor over the file tab
+vertical split - v
+horizontal splt -s
+
 Paste
 =========
 :set paste
