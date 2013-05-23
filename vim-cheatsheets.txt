@@ -35,6 +35,10 @@ g- to 'go back in time'
 
 g+ to 'go forward in time'
 
+goto line number
+================
+:55 <CR>
+
 Copy/paste between files
 ========================
 Visual mode (Esc + v)
