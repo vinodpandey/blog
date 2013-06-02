@@ -116,7 +116,14 @@ develop
 
 push develop branch content to remote repo  
 git checkout develop  
+git push origin develop
+
+regular development/bug fixes in develop branch  
+git checkout develop  
+git add {changed files}  
+git commit -m "commit message"  
 git push origin develop  
+
 
 Temporary branches that will be removed eventually  
 1. Feature branch - feature for upcoming/distant future release  
