@@ -88,3 +88,106 @@ git push --tags
 
 working on tag: 
 git checkout <tag_name>
+
+
+
+
+
+
+
+Git branching model  
+Ref: http://nvie.com/posts/a-successful-git-branching-model/  
+
+
+
+First time
+-----------
+git clone git@github.com:vinodpandey/test-git-flow.git master-repo  
+cd master-repo  
+git branch (will show current branch)  
+* master  
+
+create a develop branch  
+git branch develop  
+
+git branch  
+* master  
+develop  
+
+push develop branch content to remote repo  
+git checkout develop  
+git push origin develop  
+
+Temporary branches that will be removed eventually  
+1. Feature branch - feature for upcoming/distant future release  
+2. Release branch - support preparation of a new production release  
+3. Hotfix branch - for fixing severe production defects  
+
+Feature branch  
+---------------  
+may branch off: develop  
+must merge back to: develop  
+
+creating a feature branch  
+git checkout -b myfeature develop  
+
+incorporating finished feature on develop  
+git checkout develop  
+git merge --no-ff myfeature  
+git branch -d myfeature  
+git push origin develop  
+
+
+Release branch  
+--------------
+may branch off from: develop  
+must merge back to: develop and master  
+naming convention: release-*  
+
+branch off when develop reflects desired state of the new release  
+
+creating a release branch  
+git checkout -b release-1.2 develop  
+
+minor bug fixes can be applied to this branch instead of develop branch.  
+
+finishing a release branch  
+git checkout master  
+git merge --no-ff release-1.2  
+git tag -a 1.2  
+
+merge changes back to develop  
+git checkout developgit merge --no-ff release-1.2  
+
+remove the release branch  
+git branch -d release-1.2  
+
+Hot Fix  
+-------
+includes quick production fix  
+branch off from: master  
+merge back to master and develop  
+
+creating hotfix branch  
+git checkout -b hotfix-1.2.1 master  
+checkin the fix  
+git add {files changed}  
+commit the fix  
+git commit -m "Fixed severe production problem"  
+
+merging changes back to master and creating tag  
+git checkout master  
+git merge --no-ff hotfix-1.2.1  
+git tag -a 1.2.1  
+
+merge the changes to develop branch  
+git checkout develop  
+git merge --no-ff hotfix-1.2.1  
+
+delete the temporary branch  
+git branch -d hotfix-1.2.1  
+
+
+
+
+
