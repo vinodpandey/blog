@@ -176,7 +176,9 @@ merge changes back to develop
 $ git checkout develop  
 $ git merge --no-ff release-1.2   
 
-remove the release branch  
+remove the release branch from remove
+$ git push origin :release-1.2
+remove the release branch (locall) 
 $ git branch -d release-1.2  
 
 Hot Fix  
@@ -190,14 +192,12 @@ find out the current release tag
 $ git tag -l
 create a hotfix version name based on the latest tag above (e.g. 1.2 for below naming convention)  
 $ git checkout -b hotfix-1.2.1 master  
-make this branch available to everyone
-$ git push origin hotfix-1.2.1
+
 checkin the fix  
 $ git add {files changed}  
 commit the fix  
 $ git commit -m "Fixed severe production problem"  
-push changes to server
-$ git push origin hotfix-1.2.1
+
 
 merging changes back to master and creating tag  
 $ git checkout master  
