@@ -136,13 +136,15 @@ may branch off: develop
 must merge back to: develop  
 
 creating a feature branch  
-git checkout -b myfeature develop  
+$ git checkout -b myfeature develop  
+make this branch available to everyone (so that we have the latest code on feature branch - bus factor)
+$ git push origin myfeature
 
 incorporating finished feature on develop  
-git checkout develop  
-git merge --no-ff myfeature  
-git branch -d myfeature  
-git push origin develop  
+$ git checkout develop  
+$ git merge --no-ff myfeature  
+$ git branch -d myfeature  
+$ git push origin develop  
 
 
 Release branch  
@@ -151,23 +153,31 @@ may branch off from: develop
 must merge back to: develop and master  
 naming convention: release-*  
 
-branch off when develop reflects desired state of the new release  
+- branch off when develop reflects desired state of the new release  
+- this branch will be deployed on QA, STAG and then production  
+- no new feature should be added to this branch. only fixes for bugs found in QAT, UAT  
 
 creating a release branch  
-git checkout -b release-1.2 develop  
+see previous release versions (release tags) to decide the current release version  
+$ git tag -l (based on the latest tag, create a new major, minor release branch below)    
+$ git checkout -b release-1.2 develop  
+push this to remote server (for others to work on it, will be deleted later)
+$ git push origin release-1.2
 
-minor bug fixes can be applied to this branch instead of develop branch.  
+- fix minor bugs found during QAT, UAT 
+- no new feature  
 
 finishing a release branch  
-git checkout master  
-git merge --no-ff release-1.2  
-git tag -a 1.2  
+$ git checkout master  
+$ git merge --no-ff release-1.2  
+$ git tag -a 1.2  
 
 merge changes back to develop  
-git checkout developgit merge --no-ff release-1.2  
+$ git checkout develop  
+$ git merge --no-ff release-1.2   
 
 remove the release branch  
-git branch -d release-1.2  
+$ git branch -d release-1.2  
 
 Hot Fix  
 -------
@@ -176,23 +186,30 @@ branch off from: master
 merge back to master and develop  
 
 creating hotfix branch  
-git checkout -b hotfix-1.2.1 master  
+find out the current release tag 
+$ git tag -l
+create a hotfix version name based on the latest tag above (e.g. 1.2 for below naming convention)  
+$ git checkout -b hotfix-1.2.1 master  
+make this branch available to everyone
+$ git push origin hotfix-1.2.1
 checkin the fix  
-git add {files changed}  
+$ git add {files changed}  
 commit the fix  
-git commit -m "Fixed severe production problem"  
+$ git commit -m "Fixed severe production problem"  
+push changes to server
+$ git push origin hotfix-1.2.1
 
 merging changes back to master and creating tag  
-git checkout master  
-git merge --no-ff hotfix-1.2.1  
-git tag -a 1.2.1  
+$ git checkout master  
+$ git merge --no-ff hotfix-1.2.1  
+$ git tag -a 1.2.1  
 
 merge the changes to develop branch  
-git checkout develop  
-git merge --no-ff hotfix-1.2.1  
+$ git checkout develop  
+$ git merge --no-ff hotfix-1.2.1  
 
 delete the temporary branch  
-git branch -d hotfix-1.2.1  
+$ git branch -d hotfix-1.2.1  
 
 
 
