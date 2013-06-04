@@ -124,6 +124,11 @@ git add {changed files}
 git commit -m "commit message"  
 git push origin develop  
 
+checking develop from remote server
+git pull
+git branch -r
+git checkout -b develop origin/develop
+
 
 Temporary branches that will be removed eventually  
 1. Feature branch - feature for upcoming/distant future release  
