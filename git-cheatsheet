@@ -118,16 +118,18 @@ push develop branch content to remote repo
 git checkout develop  
 git push origin develop
 
-regular development/bug fixes in develop branch  
-git checkout develop  
-git add {changed files}  
-git commit -m "commit message"  
-git push origin develop  
-
-checking develop from remote server
+checking out develop from remote server
 git pull
 git branch -r
 git checkout -b develop origin/develop
+
+regular development/bug fixes in develop branch  
+git checkout develop  (switch to develop branch)
+git pull origin develop (take lastest changes from remote server regularly)
+git add {changed files}  
+git commit -m "commit message"  
+git push origin develop  (push changes to remote server)
+
 
 
 Temporary branches that will be removed eventually  
