@@ -177,16 +177,23 @@ $ git push origin release-1.2
 finishing a release branch  
 $ git checkout master  
 $ git merge --no-ff release-1.2  
-$ git tag -a 1.2  
+$ git tag -a 1.2 -m 'version 1.2'
+push tags to remote server:
+$ git push --tags
+$ git push origin master
 
 merge changes back to develop  
 $ git checkout develop  
 $ git merge --no-ff release-1.2   
+$ git push origin develop
 
-remove the release branch from remove
+remove the release branch from remote
 $ git push origin :release-1.2
 remove the release branch (locall) 
 $ git branch -d release-1.2  
+
+Deploy tag 1.2 on server
+
 
 Hot Fix  
 -------
@@ -210,6 +217,7 @@ merging changes back to master and creating tag
 $ git checkout master  
 $ git merge --no-ff hotfix-1.2.1  
 $ git tag -a 1.2.1  
+
 
 merge the changes to develop branch  
 $ git checkout develop  
