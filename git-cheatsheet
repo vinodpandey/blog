@@ -147,6 +147,11 @@ $ git checkout -b myfeature develop
 make this branch available to everyone (so that we have the latest code on feature branch - bus factor)
 $ git push origin myfeature
 
+during development
+$ git add {chanegd files}
+$ git commit -m "message"
+$ git push origin myfeature
+
 incorporating finished feature on develop  
 $ git checkout develop  
 $ git merge --no-ff myfeature  
