@@ -1,6 +1,12 @@
 Using south
 -----------------
 
+
+Django shell
+------------
+export PYTHONPATH=$PYTHONPATH:$PWD:$PWD/apps
+django-admin.py shell --settings=settings.dev
+
 Converting existing project to south
 --------------------------------------------
 install south
