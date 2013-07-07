@@ -1,0 +1,22 @@
+
+1. Open Directory > Point to vagrant root folder  
+2. Settings > Python Interpreters (second last icon in menu bar, besides help (?))  
+- Add remore python interpreter, incase it does not exist. (Click on the + icon)  
+Host: 127.0.0.1
+Port: 2222
+Username: vagrant
+Auth type: Password
+Password: vagrant (save password)
+Test conntection - (test if connection is successful, start vm if required)  
+Python interpreter Path: /vagrant/bin/python  
+Apply - OK
+3. Settings > Project Structure
+Select src - click on Sources menu above
+Select src/apps - click on Sources menu above
+Source folders in left get updated to src and src/apps  
+Apply - Ok  
+
+
+
+
+
