@@ -1,9 +1,16 @@
+.vagrant
+.DS_Store
+/bin
+/lib
+/include
 #################
 ## Eclipse
 #################
-
+.idea/
+src/.idea/
 *.pydevproject
 .project
+.ropeproject
 .metadata
 bin/
 tmp/
@@ -161,9 +168,3 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
-
-# PyCharm
-.idea
-
-# vagrant
-.vagrant
