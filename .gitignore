@@ -1,8 +1,8 @@
 .vagrant
 .DS_Store
-/bin
-/lib
-/include
+bin/
+lib/
+include/
 #################
 ## Eclipse
 #################
