@@ -230,6 +230,7 @@ $ git push origin master
 merge the changes to develop branch  
 $ git checkout develop  
 $ git merge --no-ff hotfix-1.2.1  
+$ git push origin develop
 
 delete the temporary branch  
 $ git branch -d hotfix-1.2.1  
