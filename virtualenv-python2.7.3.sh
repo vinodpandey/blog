@@ -6,6 +6,11 @@
 # wget --no-check-certificate -O virtualenv-python2.7.3.sh https://raw.github.com/vinodpandey/blog/master/virtualenv-python2.7.3.sh
 # chmod +x virtualenv-python2.7.3.sh
 # ./virtualenv-python2.7.3.sh
+# virtualenv-2.7 --no-site-packages .
+# source bin/activate
+# python -V 
+# pip install fabric
+# deactivate
 # source bin/activate
 # python --version
 # deactivate
@@ -64,10 +69,4 @@ else
     echo "virtualenv-2.7 v1.9.1 present"
 fi
 
-# finally, create the virtual environment
-echo "Creating virtual environment"
-virtualenv-2.7 --no-site-packages .
-source bin/activate
-python -V 
-pip install fabric
-deactivate
+
