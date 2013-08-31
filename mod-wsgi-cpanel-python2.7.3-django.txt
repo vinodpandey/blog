@@ -50,6 +50,9 @@ $ /scripts/verify_vhost_includes
 $ /scripts/ensure_vhost_includes --user=username
 
 
+Error logs:
+/etc/httpd/logs
+
 =============
 There was a problem importing one of the Python modules
 required to run yum. The error leading to this problem was:
