@@ -37,7 +37,7 @@ fi
 # check easy_install, if not present, install it
 if [[ $(easy_install-2.7 --version) != distribute* ]]; then
     echo "Installing easy_install-2.7"
-    wget http://pypi.python.org/packages/source/d/distribute/distribute-0.6.35.tar.gz
+    wget --no-check-certificate https://pypi.python.org/packages/source/d/distribute/distribute-0.6.35.tar.gz
     tar zxvf distribute-0.6.35.tar.gz
     cd distribute-0.6.35
     sudo python2.7 setup.py install
