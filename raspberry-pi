@@ -1,0 +1,131 @@
+Box as network drive on Raspberry Pi
+--------------------------------------
+sudo apt-get install davfs2  
+mkdir /home/pi/box  
+
+sudo nano /etc/fstab  
+Add this line to your /etc/fstab  
+https://dav.box.com/dav /home/pi/box  davfs  rw,noexec,auto,user,async,_netdev,uid=pi,gid=pi  0  0  
+
+Add this line to the bottom of the /etc/davfs2/secrets 
+https://dav.box.com/dav user@email.com "password"  
+
+Edit the /etc/davfs2/davfs2.conf  
+Change:  
+# use_locks 1  
+to  
+use_locks 0  
+
+sudo mount /home/pi/box  
+
+Ref: 
+http://www.sbprojects.com/projects/raspberrypi/webdav.php  
+http://www.linux.org/threads/mount-your-box-net-box-com-account-in-linux.1703/  
+
+
+Enable ssh in raspberry pi
+--------------------------
+sudo raspi-config  
+advanced configuration  
+ssh  
+Enable  
+
+Static IP address (with mtnl dhcp connection)
+---------------------------------------------
+
+$ sudo nano /etc/network/interfaces  
+
+iface default inet static  
+address 192.168.1.100  
+netmask 255.255.255.0  
+network 192.168.1.0  
+boradcast 192.168.1.255  
+gateway 192.168.1.1  
+
+restart pi  
+sudo shutdown -r now  
+
+Configuring Raspberry Pi with ownCloud
+======================================
+
+New Image on Raspberry Pi
+=========================
+http://downloads.raspberrypi.org/images/raspbian/2013-07-26-wheezy-raspbian/2013-07-26-wheezy-raspbian.zip  
+http://alltheware.wordpress.com/2012/12/11/easiest-way-sd-card-setup/  
+Write image to SD card  
+
+Lightppd  
+$ sudo apt-get update  
+$ sudo apt-get upgrade  
+$ sudo apt-get install lighttpd php5-cgi curl libcurl3 libcurl3-dev php5-curl php5-common php5-gd php-xml-serializer  
+
+Open /etc/php5/cgi/php.ini then find and uncomment the following line.  
+;cgi.fix_pathinfo=1  
+
+Follow other steps from :   
+http://anhonesteffort.org/wp/ditching-google-services-for-owncloud-on-the-pi/  
+
+Use below steps for owncloud:  
+
+$ wget http://download.owncloud.org/community/owncloud-5.0.10.tar.bz2  
+$ tar xvjf owncloud-5.0.10.tar.bz2  
+$ sudo mkdir /var/www/owncloud  
+$ sudo cp -r owncloud/* /var/www/owncloud/  
+$ sudo chown -R www-data:www-data /var/www/owncloud  
+
+
+Access:http://192.168.1.100/owncloud  
+admin/admin  
+PostgreSQL  
+owncloud  
+ownCloud!  
+owncloud  
+localhost  
+
+Install owncloud client on server:  
+sudo echo 'deb http://download.opensuse.org/repositories/isv:ownCloud:devel/Debian_7.0/ /' >> /etc/apt/sources.list.d/owncloud-client.list   
+sudo apt-get update  
+sudo apt-get install owncloud-client  
+
+Patching the lib.php file that reverts the pemissions for data folder to 770. We will use this folder to copy data directly to this.  
+/var/www/owncloud/lib/util.php  
+checkDataDirectoryPermissions -  comment code that checks permissions  
+sudo chmod -R 777 data  (be aware that this is a big sceurity flaw and should not be done if this raspberry pi is shared with multiple users)  
+
+Data location on server:  
+/var/www/owncloud/data/admin/files  
+
+
+Install s3cmd  
+
+
+0. Setting time in Pi  
+sudo pkg-reconfigure tzdata  
+
+
+1. s3cmd to sync S3 folders to local  
+sudo apt-get install s3cmd  
+s3cmd --configure  
+
+configure folders  
+
+set s3cmd in cronjob  
+
+---
+crontab -e
+* 23 * * * /home/pi/backup/backupS3.sh  
+---
+
+
+for manually - nohup ./backupS3.sh > info.log &  
+
+
+
+
+SD Card not using full space  
+http://raspberrypi.stackexchange.com/questions/4321/how-to-prevent-sd-card-capacity-loss  
+You can run sudo raspi-config and choose the expand_rootfs option to expand your 2.93GB root partition to include all that currently unallocated space. After a reboot, you'll be able to use the rest of your SD card.  
+
+
+Ref:
+http://anhonesteffort.org/wp/ditching-google-services-for-owncloud-on-the-pi/  
