@@ -1,0 +1,159 @@
+Git branching model  
+-------------------
+
+Initial Setup
+-------------
+git clone git@github.com:vinodpandey/test-git-flow.git   
+cd test-git-flow    
+git branch (will show current branch)  
+* master  
+
+create a develop branch  
+git branch develop  
+
+git branch  
+* master  
+develop 
+
+push develop branch content to remote repo  
+git checkout develop  
+git push origin develop
+
+Repository setup in developer machine
+-------------------------------------
+git clone git@github.com:vinodpandey/test-git-flow.git 
+cd test-git-flow   
+
+display all remote branches  
+git branch -r  
+  origin/HEAD -> origin/master  
+  origin/develop  
+  origin/master  
+
+create a local develop branch  
+git checkout -b develop origin/develop  
+
+git branch  
+* develop  
+  master  
+
+Development/bug fixes
+---------------------
+Developement/bug fix is done in develop branch only. master branch should always contain production ready code.  
+git checkout develop  (switch to develop branch)  
+git pull origin develop (take lastest changes from remote server regularly)  
+git add {changed files}  
+git commit -m "commit message"  
+git push origin develop  (push changes to remote server)  
+
+Temporary branches that will be removed eventually 
+---------------------------------------------------
+1. Feature branch - feature for upcoming/distant future release  
+2. Release branch - support preparation of a new production release    
+3. Hotfix branch - for fixing severe production defects  
+
+Feature branch  
+---------------  
+may branch off: develop  
+must merge back to: develop  
+
+creating a feature branch  
+$ git checkout -b myfeature develop  
+make this branch available to everyone (so that we have the latest code on feature branch - bus factor)
+$ git push origin myfeature
+
+during development
+$ git add {chanegd files}
+$ git commit -m "message"
+$ git push origin myfeature
+
+incorporating finished feature on develop  
+$ git checkout develop  
+$ git merge --no-ff myfeature  
+$ git branch -d myfeature  
+$ git push origin develop  
+
+
+Release branch  
+--------------
+may branch off from: develop  
+must merge back to: develop and master  
+naming convention: release-*  
+
+- branch off when develop reflects desired state of the new release  
+- this branch will be deployed on QA, STAG and then production  
+- no new feature should be added to this branch. only fixes for bugs found in QAT, UAT  
+
+creating a release branch  
+see previous release versions (release tags) to decide the current release version  
+$ git tag -l (based on the latest tag, create a new major, minor release branch below)    
+$ git checkout -b release-1.2 develop  
+push this to remote server (for others to work on it, will be deleted later)  
+$ git push origin release-1.2  
+
+- fix minor bugs found during QAT, UAT   
+- no new feature  
+
+finishing a release branch  
+$ git checkout master  
+$ git merge --no-ff release-1.2  
+$ git tag -a 1.2 -m 'version 1.2'  
+push tags to remote server:
+$ git push --tags  
+$ git push origin master  
+
+merge changes back to develop  
+$ git checkout develop  
+$ git merge --no-ff release-1.2   
+$ git push origin develop  
+
+remove the release branch from remote
+$ git push origin :release-1.2  
+remove the release branch (local)   
+$ git branch -d release-1.2  
+
+Deploy tag 1.2 on server  
+
+
+Hot Fix  
+-------
+includes quick production fix  
+branch off from: master  
+merge back to master and develop    
+
+creating hotfix branch  
+$ git checkout master  
+find out the current release tag   
+$ git tag -l  
+create a hotfix version name based on the latest tag above (e.g. 1.2 for below naming convention)  
+$ git checkout -b hotfix-1.2.1 master  
+
+checkin the fix  
+$ git add {files changed}  
+commit the fix  
+$ git commit -m "Fixed severe production problem"  
+
+
+merging changes back to master and creating tag  
+$ git checkout master  
+$ git merge --no-ff hotfix-1.2.1  
+$ git tag -a 1.2.1  
+
+push tags and changes to remote server:
+$ git push --tags  
+$ git push origin master  
+
+merge the changes to develop branch    
+$ git checkout develop  
+$ git merge --no-ff hotfix-1.2.1  
+$ git push origin develop  
+
+delete the temporary branch    
+$ git branch -d hotfix-1.2.1   
+
+
+
+
+
+Ref: 
+http://nvie.com/posts/a-successful-git-branching-model/  
