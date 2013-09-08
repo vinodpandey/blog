@@ -207,6 +207,7 @@ branch off from: master
 merge back to master and develop  
 
 creating hotfix branch  
+$ git checkout master
 find out the current release tag 
 $ git tag -l
 create a hotfix version name based on the latest tag above (e.g. 1.2 for below naming convention)  
