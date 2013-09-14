@@ -1,0 +1,15 @@
+jMeter 
+-----------------------
+http://psg.mtu.edu/pub/apache/jmeter/binaries/apache-jmeter-2.9.zip
+
+sh ./bin/jmeter.sh
+
+
+Basic Tutorial (Building a Web Test Plan)
+http://jmeter.apache.org/usermanual/build-web-test-plan.html
+
+
+LoadUI
+http://loadui.org/Getting-Started-with-loadUI/sample-projects.html
+http://loadui.org/Getting-Started-with-loadUI/sample-projects/1.-Simple-Web-LoadTest.html
+
