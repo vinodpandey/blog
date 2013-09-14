@@ -4,6 +4,8 @@ Using south
 
 Django shell
 ------------
+cd src
+source ../bin/activate
 export PYTHONPATH=$PYTHONPATH:$PWD:$PWD/apps
 django-admin.py shell --settings=settings.dev
 
