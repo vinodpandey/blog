@@ -1,0 +1,57 @@
+Installation (CentOS with Cpanel)
+---------------------------------
+sudo yum install libevent
+
+sudo yum install memcached
+
+nano /etc/init.d/memcached
+- will show the path to config file
+
+config
+/etc/sysconfig/memcached
+
+PORT="11211"
+USER="memcached"
+MAXCONN="1024"
+CACHESIZE="64"
+OPTIONS=""
+
+
+Django
+------
+pip install python-memcached
+pip install django-memcache-status
+
+configuration:
+Add to installed apps:
+'memcache_status',
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+
+
+memcached
+---------
+ps aux | grep memcached (will show the port and current configuration for memcached)
+497       3919  0.0  0.0 330840   972 ?        Ssl  02:18   0:00 memcached -d -p 11211 -u memcached -m 64 -c 1024 -P /var/run/memcached/memcached.pid
+telnet localhost 11211
+stats
+stats items
+stats cachedump slabid 100
+
+
+
+Searching for a file in linux
+sudo updatedb
+locate memcached.conf
+
+Ref: http://www.davidado.com/2012/09/07/install-memcached-in-a-whmcpanel-environment-centos/
+http://www.hardwaretutorials.com/2012/09/install-memcache-on-centos-6-cpanel/
+
+
+
