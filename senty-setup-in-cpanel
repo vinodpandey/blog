@@ -1,0 +1,48 @@
+Prerequisite:-
+
+Python: 2.7.3  
+virtualenv-2.7  
+Ref:  
+https://github.com/vinodpandey/blog/blob/master/virtualenv-python2.7.3.sh  
+
+
+Steps:-   
+cd /home/user/webapps  
+mkdir sentry  
+cd sentry  
+virtualenv-2.7 --no-site-packages .   
+source bin/activate  
+easy_install -UZ sentry[mysql]  
+
+sentry init /etc/sentry.conf.py  
+
+nano /etc/sentry.conf.py  
+configuration update  
+
+sentry --config=/etc/sentry.conf.py upgrade  
+create a super user during database setup  
+
+starting server  
+sentry --config=/etc/sentry.conf.py start  
+
+mkdir -p /usr/local/apache/conf/userdata/std/2/user/website.com  
+vi /usr/local/apache/conf/userdata/std/2/user/website.com/vhost.conf  
+
+vhost.conf  
+----------  
+ProxyPass / http://localhost:9000/  
+ProxyPassReverse / http://localhost:9000/  
+ProxyPreserveHost On  
+RequestHeader set X-Forwarded-Proto "https" env=HTTPS  
+------
+
+
+/scripts/verify_vhost_includes  
+/scripts/ensure_vhost_includes --user=username  
+
+
+Ref:
+http://sentry.readthedocs.org/en/latest/quickstart/
+
+
+
