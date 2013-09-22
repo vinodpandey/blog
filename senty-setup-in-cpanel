@@ -41,6 +41,25 @@ RequestHeader set X-Forwarded-Proto "https" env=HTTPS
 /scripts/ensure_vhost_includes --user=username  
 
 
+Configuring Django (Python)  
+pip install raven  
+
+configuration update  
+Django configuration:  
+-------  
+# Set your DSN value  
+RAVEN_CONFIG = {  
+    'dsn': 'from-sentry-server',  
+}  
+
+# Add raven to the list of installed apps  
+INSTALLED_APPS = INSTALLED_APPS + (  
+    
+    'raven.contrib.django.raven_compat',  
+)  
+-----  
+
+
 Ref:
 http://sentry.readthedocs.org/en/latest/quickstart/
 
