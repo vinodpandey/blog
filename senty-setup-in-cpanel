@@ -23,7 +23,7 @@ sentry --config=/etc/sentry.conf.py upgrade
 create a super user during database setup  
 
 starting server  
-sentry --config=/etc/sentry.conf.py start  
+sentry --config=/etc/sentry.conf.py start &    
 
 mkdir -p /usr/local/apache/conf/userdata/std/2/user/website.com  
 vi /usr/local/apache/conf/userdata/std/2/user/website.com/vhost.conf  
