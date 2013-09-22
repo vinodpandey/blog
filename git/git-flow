@@ -169,7 +169,8 @@ $ git merge --no-ff hotfix-1.2.1
 Merge made by recursive.
 (Summary of changes)
 
-Note: The one exception to the rule here is that, when a release branch currently exists, the hotfix changes need to be merged into that release branch, instead of develop.
+Note: The one exception to the rule here is that, when a release branch currently exists,   
+the hotfix changes need to be merged into that release branch, instead of develop.
 
 $ git push origin develop  
 
