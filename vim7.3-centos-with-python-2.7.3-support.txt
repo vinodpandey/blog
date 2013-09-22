@@ -3,7 +3,7 @@ Installing VIM 7.3 on CentOS with Python 2.7.3 support
 First install some packages for correct python installation
 ===========================================================
 sudo yum -y groupinstall 'Development Tools'
-sudo yum -y  install openssl-devel zlib ncurses ncurses-devel
+sudo yum -y  install openssl-devel zlib ncurses ncurses-devel bzip2-devel
 mkdir -p ~/temp
 cd ~/temp
 wget http://python.org/ftp/python/2.7.3/Python-2.7.3.tgz
