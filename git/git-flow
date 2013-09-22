@@ -88,6 +88,13 @@ creating a release branch
 see previous release versions (release tags) to decide the current release version  
 $ git tag -l (based on the latest tag, create a new major, minor release branch below)    
 $ git checkout -b release-1.2 develop  
+
+$ ./bump-version.sh 1.2
+Files modified successfully, version bumped to 1.2.
+$ git commit -a -m "Bumped version number to 1.2"
+[release-1.2 74d9424] Bumped version number to 1.2
+1 files changed, 1 insertions(+), 1 deletions(-)
+
 push this to remote server (for others to work on it, will be deleted later)  
 $ git push origin release-1.2  
 
@@ -97,6 +104,8 @@ $ git push origin release-1.2
 finishing a release branch  
 $ git checkout master  
 $ git merge --no-ff release-1.2  
+Merge made by recursive.
+(Summary of changes)
 $ git tag -a 1.2 -m 'version 1.2'  
 push tags to remote server:
 $ git push --tags  
@@ -105,6 +114,8 @@ $ git push origin master
 merge changes back to develop  
 $ git checkout develop  
 $ git merge --no-ff release-1.2   
+Merge made by recursive.
+(Summary of changes)
 $ git push origin develop  
 
 remove the release branch from remote
@@ -127,6 +138,12 @@ find out the current release tag
 $ git tag -l  
 create a hotfix version name based on the latest tag above (e.g. 1.2 for below naming convention)  
 $ git checkout -b hotfix-1.2.1 master  
+$ ./bump-version.sh 1.2.1
+Files modified successfully, version bumped to 1.2.1.
+$ git commit -a -m "Bumped version number to 1.2.1"
+[hotfix-1.2.1 41e61bb] Bumped version number to 1.2.1
+1 files changed, 1 insertions(+), 1 deletions(-)
+
 
 checkin the fix  
 $ git add {files changed}  
@@ -137,6 +154,9 @@ $ git commit -m "Fixed severe production problem"
 merging changes back to master and creating tag  
 $ git checkout master  
 $ git merge --no-ff hotfix-1.2.1  
+Merge made by recursive.
+(Summary of changes)
+
 $ git tag -a 1.2.1  
 
 push tags and changes to remote server:
@@ -146,6 +166,11 @@ $ git push origin master
 merge the changes to develop branch    
 $ git checkout develop  
 $ git merge --no-ff hotfix-1.2.1  
+Merge made by recursive.
+(Summary of changes)
+
+Note: The one exception to the rule here is that, when a release branch currently exists, the hotfix changes need to be merged into that release branch, instead of develop.
+
 $ git push origin develop  
 
 delete the temporary branch    
