@@ -5,12 +5,12 @@
 # cd test-dir
 # \curl https://raw.github.com/vinodpandey/blog/master/django-recycled | bash
 
-print 'Creating virtual environment'
+echo 'Creating virtual environment'
 virtualenv-2.7 --no-site-packages .
 source bin/activate
-print 'Installing Django'
+echo 'Installing Django'
 pip install Django==1.5.0
-print 'Creating Django Project'
+echo 'Creating Django Project'
 django-admin.py startproject project
 deactivte
 
