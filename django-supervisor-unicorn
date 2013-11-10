@@ -1,0 +1,36 @@
+Supervisor
+==========
+Installation  
+sudo pip-2.7 install supervisor  
+(to setup pip-2.7 use https://github.com/vinodpandey/blog/blob/master/virtualenv-python2.7.3.sh)  
+
+echo_supervisord_conf > supervisord.conf  
+sudo cp supervisord.conf /etc/supervisord.conf  
+
+sudo ln -sfn /usr/local/bin/supervisord /usr/bin/supervisord  
+sudo ln -sfn /usr/local/bin/supervisorctl /usr/bin/supervisorctl  
+
+Sample config file  
+[program:gunicorn_website]  
+command=/vagrant/bin/python2.7 /vagrant/bin/gunicorn project.dev_wsgi:application --bind=0.0.0.0:8000 --workers 9  
+directory=/vagrant/website  
+user=vagrant  
+autostart=true  
+autorestart=true  
+stdout_logfile = /var/log/gunicorn/website-std.log   
+stderr_logfile = /var/log/gunicorn/website-err.log  
+
+supervisor commands  
+start  
+sudo /usr/bin/supervisord -c /etc/supervisord.conf 
+
+status  
+sudo supervisorctl status  
+sudo supervisorctl start gunicorn_website  
+
+
+Error: Another program is already listening on a port that one of our HTTP servers is configured to use. 
+Solution: sudo unlink /tmp/supervisor.sock  
+
+
+
