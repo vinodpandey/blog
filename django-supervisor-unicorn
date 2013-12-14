@@ -33,5 +33,7 @@ ps aux | grep gunicorn_website
 Error: Another program is already listening on a port that one of our HTTP servers is configured to use. 
 Solution: sudo unlink /tmp/supervisor.sock  
 
-
+Restarting supervisord  
+sudo unlink /tmp/supervisor.sock  
+sudo /usr/bin/supervisord -c /etc/supervisord.conf  
 
