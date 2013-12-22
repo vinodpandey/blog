@@ -91,11 +91,13 @@ $ git checkout -b release-1.2 develop
 
 $ ./bump-version.sh 1.2
 Files modified successfully, version bumped to 1.2.
+
 $ git commit -a -m "Bumped version number to 1.2"
 [release-1.2 74d9424] Bumped version number to 1.2
 1 files changed, 1 insertions(+), 1 deletions(-)
 
-push this to remote server (for others to work on it, will be deleted later)  
+if required by other team members, push this to remote server (for others to work on it, will be deleted later)  
+otherwise, this step can be skipped
 $ git push origin release-1.2  
 
 - fix minor bugs found during QAT, UAT   
@@ -106,6 +108,7 @@ $ git checkout master
 $ git merge --no-ff release-1.2  
 Merge made by recursive.
 (Summary of changes)
+
 $ git tag -a 1.2 -m 'version 1.2'  
 push tags to remote server:
 $ git push --tags  
@@ -116,10 +119,12 @@ $ git checkout develop
 $ git merge --no-ff release-1.2   
 Merge made by recursive.
 (Summary of changes)
+
 $ git push origin develop  
 
 remove the release branch from remote
 $ git push origin :release-1.2  
+
 remove the release branch (local)   
 $ git branch -d release-1.2  
 
