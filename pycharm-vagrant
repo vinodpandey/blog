@@ -1,22 +1,30 @@
 
-1. Open Directory > Point to vagrant root folder  
-2. Settings > Python Interpreters (second last icon in menu bar, besides help (?))  
-- Add remore python interpreter, incase it does not exist. (Click on the + icon)  
-Host: 127.0.0.1
-Port: 2222
-Username: vagrant
-Auth type: Password
-Password: vagrant (save password)
-Test conntection - (test if connection is successful, start vm if required)  
-Python interpreter Path: /vagrant/bin/python  
-Apply - OK
-3. Settings > Project Structure
-Select src - click on Sources menu above
-Select src/apps - click on Sources menu above
-Source folders in left get updated to src and src/apps  
-Apply - Ok  
 
+PyCharm with Vagrant
+=====================
 
+Vagrant VM configuration
+------------------------
+PyCharm > Preferences
+Project Settings > Vagrant
+Instance Folder: Enter path to vagrant instance
+Python Interpreter > Configure Interpreters (Note: start virtual machine before configuring this)
++ > Remote
+Fill from vagrant config
+Test Connection - Successfully conntect to 127.0.0.1
 
+Virtual Python interpreter setup
+--------------------------------
+Python Interpreter Path: /vagrant/bin/python (update this to python path or virtualenv python path whichever is applicable)
+Ok
+Do you want to set this interpreter as project interpreter? yes
+Apply
+Ok
 
+Adding src directories
+----------------------
+PyCharm > Preferences
+Project Structure
+Select directory on right panel > Click on Sources button above > the directory appears to in left under 'Source Folderes'
+(Select apps, settings, projects if using https://github.com/vinodpandey/linux-dev-box)
 
