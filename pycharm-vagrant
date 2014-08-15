@@ -15,7 +15,8 @@ Test Connection - Successfully conntect to 127.0.0.1
 
 Virtual Python interpreter setup
 --------------------------------
-Python Interpreter Path: /vagrant/bin/python (update this to python path or virtualenv python path whichever is applicable)
+Python Interpreter Path: /vagrant/bin/python (update this to python path or virtualenv python path whichever 
+is applicable)
 Ok
 Do you want to set this interpreter as project interpreter? yes
 Apply
@@ -25,7 +26,8 @@ Adding src directories
 ----------------------
 PyCharm > Preferences
 Project Structure
-Select directory on right panel > Click on Sources button above > the directory appears to in left under 'Source Folderes'
+Select directory on right panel > Click on Sources button above > the directory appears to in left under 
+'Source Folderes'
 (Select apps, settings, projects if using https://github.com/vinodpandey/linux-dev-box)
 Apply
 Ok
