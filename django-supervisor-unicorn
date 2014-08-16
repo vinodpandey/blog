@@ -23,6 +23,8 @@ stderr_logfile = /var/log/gunicorn/website-err.log
 supervisor commands  
 start  
 sudo /usr/bin/supervisord -c /etc/supervisord.conf 
+stop
+sudo supervisorctl shutdown
 
 status  
 sudo supervisorctl status  
