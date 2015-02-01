@@ -1,0 +1,134 @@
+
+installing-confluence-and-jira-on-centos  
+============================================  
+
+copying setup files to server  
+------------------------------  
+scp -rv atlassian-confluence-5.6.6-x64.bin root@192.168.33.12:/opt/  
+scp -rv atlassian-jira-6.3.13-x64.bin root@192.168.33.12:/opt/  
+
+installing java  
+----------------  
+verify if java already installed and JAVA_HOME is set  
+java -version  
+echo $JAVA_HOME  
+
+installing java  
+sudo yum install java-1.7.0-openjdk-devel  
+
+setting up JAVA_HOME  
+find java install location   
+update-alternatives --display java  
+/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java  
+
+cd /etc/profile.d  
+vim java_home.sh  
+export JAVA_HOME=/usr/lib/jvm/jre-1.7.0-openjdk.x86_64  
+
+insalling jira  
+---------------  
+sudo chmod a+x atlassian-jira-6.3.13-x64.bin  
+sudo ./atlassian-jira-6.3.13-x64.bin  
+o, Enter  
+2, Enter (Custom install)  
+instal location: /opt/atlassian/jira  
+data location: /var/atlassian/application-data/jira  
+2 - custom ports  
+HTTP - 8080  
+Control port - 8085  
+y, Enter - JIRA as a service  
+
+setup mysql drivers  
+--------------------  
+stop jira server  
+cd /opt/  
+sudo wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.34.tar.gz  
+sudo tar zxvf mysql-connector-java-5.1.34.tar.gz  
+cp mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/  
+
+start jira server  
+
+
+post installation steps  
+------------------------  
+access - http://192.168.33.12:8080/  
+I'll set it up myself - Next  
+My own database  
+Enter mysql database details  
+Test Connection  
+Next  
+Mode: Private  
+Update Base URL: subdomain.domain.com  
+Next  
+JIRA + JIRA Agile  
+Add licence  
+Setup admin account  
+Setup email notification later  
+
+starting/stoppin jira server  
+-----------------------------  
+custom wizard creates default user - jira - for running server  
+cd /opt/atlassian/jira/bin  
+sudo -u jira bash  
+./stop-jira.sh  
+./start-jira.sh  
+
+
+insalling confluence  
+---------------------  
+sudo chmod a+x atlassian-confluence-5.6.6-x64.bin  
+sudo ./atlassian-confluence-5.6.6-x64.bin  
+o, Enter  
+2, Enter (Custom install)  
+instal location: /opt/atlassian/jira  
+data location: /var/atlassian/application-data/jira  
+2 - custom ports  
+HTTP - 8081  
+Control port - 8086  
+y, Enter - Confluence as a service  
+
+starting/stoppin confluence server  
+----------------------------------  
+custom wizard creates default user - confluence - for running server  
+cd /opt/atlassian/confluence/bin  
+sudo -u confluence bash  
+./stop-confluence.sh  
+./start-confluence.sh  
+
+setup mysql drivers  
+--------------------  
+stop confluence server  
+cd /opt/  
+sudo wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.34.tar.gz  
+sudo tar zxvf mysql-connector-java-5.1.34.tar.gz  
+sudo cp mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar /opt/atlassian/confluence/confluence/WEB-INF/lib/  
+
+start confluence server  
+
+changing ports manually (seems custom wizard is not updating the ports)  
+------------------------------------------------------------------------  
+stop confluence server  
+sudo vim /opt/atlassian/confluence/conf/server.xml  
+change ports - 8081, 8086  
+start confleunce server   
+
+post installation configuration  
+-----------------------------------  
+access http://192.168.33.12:8086/  
+production setup  
+genrerate evalutation key  
+Next  
+External database - MySQL  
+Direct JDBC  
+Example site  
+
+bin/setenv.sh contains the heap memory setting   
+
+
+Common Erros:  
+SEVERE: Unable to create directory for deployment: /opt/atlassian/confluence/conf/Standalone/localhost  
+
+change permissions: sudo chown confluence:confluence conf  
+
+
+
