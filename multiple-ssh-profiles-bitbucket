@@ -1,0 +1,27 @@
+
+Create SSH keys for different profiles  
+ssh-keygen -f ~/.ssh/personalid -C "personal email ID"  
+ssh-keygen -f ~/.ssh/workdid -C "work email ID"  
+
+vim  ~/.ssh/config   
+--------------  
+Host workdid  
+ HostName bitbucket.org  
+ IdentityFile ~/.ssh/workdid  
+Host personalid  
+ HostName bitbucket.org  
+ IdentityFile ~/.ssh/personalid  
+--------------  
+
+Update public SSH key in bitbucket   
+cat ~/.ssh/personalid.pub | pbcopy  
+
+Git	 
+Instead of  
+git@bitbucket.org:accountname/reponame.git  
+Use    
+git@personalid:accountname/reponame.git    
+
+Reference  
+https://confluence.atlassian.com/pages/viewpage.action?pageId=271943168  
+
