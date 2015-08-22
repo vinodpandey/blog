@@ -1,0 +1,6 @@
+
+ps aux | grep memcached (will show the port and current configuration for memcached)
+497       3919  0.0  0.0 330840   972 ?        Ssl  02:18   0:00 memcached -d -p 11211 -u memcached -m 64 -c 1024 -P /var/run/memcached/memcached.pid
+
+telnet localhost 11211
+
