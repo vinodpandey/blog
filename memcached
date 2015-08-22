@@ -1,6 +1,111 @@
 
+
+memcache
+===========
+
+connecting to memcache
+-----------------------
 ps aux | grep memcached (will show the port and current configuration for memcached)
 497       3919  0.0  0.0 330840   972 ?        Ssl  02:18   0:00 memcached -d -p 11211 -u memcached -m 64 -c 1024 -P /var/run/memcached/memcached.pid
-
 telnet localhost 11211
+
+overview of important statistics
+---------------------------------
+stats
+STAT pid 1552
+STAT uptime 1828
+STAT time 1440219966
+STAT version 1.4.4
+STAT pointer_size 64
+STAT rusage_user 0.082987
+STAT rusage_system 0.111982
+STAT curr_connections 11
+STAT total_connections 16
+STAT connection_structures 13
+STAT cmd_get 30
+STAT cmd_set 11
+STAT cmd_flush 0
+STAT get_hits 17
+STAT get_misses 13
+STAT delete_misses 0
+STAT delete_hits 0
+STAT incr_misses 0
+STAT incr_hits 0
+STAT decr_misses 0
+STAT decr_hits 0
+STAT cas_misses 0
+STAT cas_hits 0
+STAT cas_badval 0
+STAT auth_cmds 0
+STAT auth_errors 0
+STAT bytes_read 42262
+STAT bytes_written 95330
+STAT limit_maxbytes 67108864
+STAT accepting_conns 1
+STAT listen_disabled_num 0
+STAT threads 4
+STAT conn_yields 0
+STAT bytes 41046
+STAT curr_items 9
+STAT total_items 9
+STAT evictions 0
+
+important stat items
+---------------------
+version - Version string of this server
+curr_items  - Current number of items stored  
+total_items - Total number of items stored since the server started
+curr_connections - Number of open connections 
+total_connections - Total number of connections opened since the server started running 
+get_hits - Number of keys that have been requested and found present
+get_misses - Number of items that have been requested and not found 
+evictions - Number of valid items removed from cache to free memory for new items 
+
+displaying all slabs in memcache
+---------------------------------
+stats items
+STAT items:1:number 3
+STAT items:1:age 565
+STAT items:1:evicted 0
+STAT items:1:evicted_nonzero 0
+STAT items:1:evicted_time 0
+STAT items:1:outofmemory 0
+STAT items:1:tailrepairs 0
+STAT items:9:number 1
+STAT items:9:age 1772
+STAT items:9:evicted 0
+STAT items:9:evicted_nonzero 0
+STAT items:9:evicted_time 0
+STAT items:9:outofmemory 0
+STAT items:9:tailrepairs 0
+
+displaying all items in slab
+----------------------------
+stats cachedump [slab ID] [number of items, 0 for all items]
+
+stats cachedump 1 0
+ITEM :1:master.key.download [1 b; 1440218138 s]
+ITEM master.key.download [5 b; 1440305225 s]
+ITEM foo [5 b; 1440305100 s]
+END
+
+getting value of a key
+------------------------
+get keyname
+
+get :1:master.key.download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
