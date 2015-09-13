@@ -1,5 +1,5 @@
 #!/bin/bash
-# >> If using vagrant, for python installlation, place this script in ~/ instead of /vagrant <<
+# >> If using vagrant, for python installation, place this script in ~/ instead of /vagrant <<
 # create a directory and run this script to create a virtualenv 
 # inside that directory
 # mkdir test
