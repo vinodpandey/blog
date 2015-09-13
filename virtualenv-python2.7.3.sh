@@ -21,7 +21,7 @@ if [[ $(python2.7 -c 'import sys; print(".".join(map(str, sys.version_info[:3]))
     tar zxvf Python-2.7.3.tgz
     cd Python-2.7.3
     ./configure --prefix=/usr/local --with-threads --enable-shared --with-zlib=/usr/include
-    make
+    sudo make
     sudo make altinstall
     cd ..
     cd ..
