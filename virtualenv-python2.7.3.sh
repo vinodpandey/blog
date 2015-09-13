@@ -14,7 +14,7 @@
 # check python version, if version 2.7.3 not present, install it
 if [[ $(python2.7 -c 'import sys; print(".".join(map(str, sys.version_info[:3])))') != 2.7.* ]]; then
     echo "Installing Python 2.7.3"
-    sudo yum -y install zlib zlib-devel gcc httpd-devel bzip2-devel
+    sudo yum -y install zlib zlib-devel gcc httpd-devel bzip2-devel openssl
     mkdir -p temp
     cd temp
     wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tgz
