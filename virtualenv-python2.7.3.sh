@@ -50,17 +50,17 @@ else
 fi
   
 # check pip, if not present, install it
-if [[ $(pip-2.7 --version) != pip* ]]; then
+if [[ $(pip2.7 --version) != pip* ]]; then
    echo "Installing pip" 
    sudo easy_install-2.7 pip
-   sudo ln -sfn /usr/local/bin/pip-2.7 /usr/bin/pip-2.7
+   sudo ln -sfn /usr/local/bin/pip2.7 /usr/bin/pip2.7
 else
-   echo "pip-2.7 present"
+   echo "pip2.7 present"
 fi
 
 # check if virtualenv is present, otherwise install it
 if [[ $(virtualenv-2.7 --version) != 1.9.1* ]]; then
-    sudo pip-2.7 install virtualenv==1.9.1
+    sudo pip2.7 install virtualenv==1.9.1
 else
     echo "virtualenv-2.7 v1.9.1 present"
 fi
