@@ -188,3 +188,4 @@ $ git branch -d hotfix-1.2.1
 
 Ref: 
 http://nvie.com/posts/a-successful-git-branching-model/  
+https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
