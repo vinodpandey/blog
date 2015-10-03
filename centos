@@ -1,0 +1,17 @@
+setting static IP (Wifi) in CentOS using GUI (development server only)
+------------------------------------------------------------------------
+System > Preferences > Network Connections
+Select connected wireless network and click Edit
+Check - Available to all users 
+Select - IPv4 Settings Tab
+Method - Manual
+Click - Add in Addresses
+Address: 192.168.1.100
+Netmask: 255.255.255.0
+Gateway: 192.168.1.1
+
+DNS Servers: 8.8.8.8
+
+Click - Apply
+
+Restart
