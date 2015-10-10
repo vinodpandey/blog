@@ -5,3 +5,30 @@ Apache log location:
 Error logs
 -----------
 /usr/local/apache/logs/error_log
+
+cpanel remote mysql
+--------------------
+Permit remote hosts (servers) to access MySQL databases on this server
+-----------------------------------------------------------------------
+1. Home >> SQL Services >> Additional MySQL Access Hosts
+   Enter IP address and click save
+2. Click on the links below "Save" button with text "click here" to configure access from all users's accounts
+3. verify individual accounts have this configuration to allow remote ip access (port:2083 account url > mysql > remote mysql access)
+4. Verify remote access for each database user in each account
+a. login to server that will access above mysql server remotely
+b. mysql -u db_user -h mysql_server_ip -p
+where 
+db_user - database user for which remote mysql access is granted
+mysql_server_ip - remote mysql server
+this should connect to remote mysql server and display mysql console
+oncd connected to mysql console, execute below command to verify that remote database is accessible to this user.
+use database; 
+
+Setup Remote MySQL Server (in place of local mysql server)
+-----------------------------------------------------------
+1. update hosts file
+vim /etc/hosts
+mysql_server_ip omega
+2. update config files and include omega as mysql_host
+
+
