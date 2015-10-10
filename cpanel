@@ -1,3 +1,7 @@
 Apache log location:
 -------------------
 /usr/local/apache/domlogs
+
+Error logs
+-----------
+/usr/local/apache/logs/error_log
