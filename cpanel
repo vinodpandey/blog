@@ -10,6 +10,7 @@ cpanel remote mysql
 --------------------
 Permit remote hosts (servers) to access MySQL databases on this server
 -----------------------------------------------------------------------
+0. On remote mySQL server, setup database, db_user and corresponding db to db_user permissions
 1. Home >> SQL Services >> Additional MySQL Access Hosts
    Enter IP address and click save
 2. Click on the links below "Save" button with text "click here" to configure access from all users's accounts
