@@ -15,3 +15,17 @@ DNS Servers: 8.8.8.8
 Click - Apply
 
 Restart
+
+Mounting USB in CentOS
+------------------------
+fdisk -l
+mkdir /mnt/usb
+mount /dev/sdb1 /mnt/usb
+umount /mnt/usb
+
+umount -f /mnt/usb   - force unmount
+umount -l /mnt/usb   - force unmount
+
+
+
+
