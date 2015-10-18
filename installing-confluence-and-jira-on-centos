@@ -131,4 +131,28 @@ SEVERE: Unable to create directory for deployment: /opt/atlassian/confluence/con
 change permissions: sudo chown confluence:confluence conf  
 
 
+setting proxy on cpanel (with existing domain - example.com)
+------------------------------------------------------------
+Apache Configuration > Include Editor > Post Virtual Host Include
+
+<VirtualHost xx.xx.xx.xx:80>
+  ServerName jira.example.com
+	ProxyPass / http://localhost:8080/
+	ProxyPassReverse / http://localhost:8080/
+	ProxyPreserveHost On
+	RequestHeader set X-Forwarded-Proto "https" env=HTTPS
+</VirtualHost>
+
+<VirtualHost xx.xx.xx.xx:80>
+  ServerName confluence.example.com
+	ProxyPass / http://localhost:8081/
+	ProxyPassReverse / http://localhost:8081/
+	ProxyPreserveHost On
+	RequestHeader set X-Forwarded-Proto "https" env=HTTPS
+</VirtualHost>
+
+
+
+
+
 
