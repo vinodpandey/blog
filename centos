@@ -26,6 +26,8 @@ umount /mnt/usb
 umount -f /mnt/usb   - force unmount
 umount -l /mnt/usb   - force unmount
 
-
+Testing email functionality
+----------------------------
+/bin/mail -v -s "Enter Subject Line here" "me@gmail.com" < /tmp/test.txt
 
 
