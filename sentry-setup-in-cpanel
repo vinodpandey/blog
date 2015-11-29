@@ -29,6 +29,20 @@ sentry init /etc/sentry.conf.py
 nano /etc/sentry.conf.py  
 configuration update  
 
+pip install mysql-python
+
+installing redis
+---------------
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
+yum --enablerepo=remi,remi-test install redis
+
+sudo service redis start
+sudo chkconfig redis on
+
+redis-cli info | grep redis_version
+
 sentry --config=/etc/sentry.conf.py upgrade  
 create a super user during database setup  
 
