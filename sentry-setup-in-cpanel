@@ -47,10 +47,10 @@ sentry --config=/etc/sentry.conf.py upgrade
 create a super user during database setup  
 
 starting server  
-sentry --config=/etc/sentry.conf.py start &    
+SENTRY_CONF=/etc/sentry.conf.py sentry start &
 
 starting background workers
-sentry --config=/etc/sentry.conf.py start celery worker -B &     
+SENTRY_CONF=/www/sentry/sentry.conf.py sentry celery worker -B &   
 
 stopping server
 sudo netstat -tulpn | grep 9000 
