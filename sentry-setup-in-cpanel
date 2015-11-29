@@ -25,6 +25,10 @@ create a super user during database setup
 starting server  
 sentry --config=/etc/sentry.conf.py start &    
 
+stopping server
+sudo netstat -tulpn | grep 9000 
+kill -9 {id}
+
 mkdir -p /usr/local/apache/conf/userdata/std/2/user/website.com  
 vi /usr/local/apache/conf/userdata/std/2/user/website.com/vhost.conf  
 
