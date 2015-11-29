@@ -50,7 +50,7 @@ starting server
 SENTRY_CONF=/etc/sentry.conf.py sentry start &
 
 starting background workers
-SENTRY_CONF=/www/sentry/sentry.conf.py sentry celery worker -B &   
+SENTRY_CONF=/etc/sentry.conf.py sentry celery worker -B &   
 
 stopping server
 sudo netstat -tulpn | grep 9000 
