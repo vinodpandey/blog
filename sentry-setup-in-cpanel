@@ -1,24 +1,28 @@
 Prerequisite:-
 
-Python: 2.7.3  
+Python: 2.7.10  
 virtualenv-2.7  
 Ref:  
-https://github.com/vinodpandey/blog/blob/master/virtualenv-python2.7.3.sh  
+https://github.com/vinodpandey/blog/blob/master/virtualenv-python2.7.10.sh  
 
 Ref:
 https://docs.getsentry.com/on-premise/server/installation/
 
 Steps:-   
+yum -y install libxml2-devel libxslt-devel libffi-devel openssl-devel
 cd /home/user/webapps  
 mkdir sentry  
 cd sentry  
 virtualenv-2.7 --no-site-packages .   
 source bin/activate  
 
-upgrade setuptools
-wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+pip install --upgrade pip
 
-easy_install -UZ sentry[mysql]  
+pip install -U sentry
+
+verify sentry installed properly
+$ sentry
+usage: [SENTRY_CONF=/path/to/settings.py] sentry [command] [options]
 
 sentry init /etc/sentry.conf.py  
 
