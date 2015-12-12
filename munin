@@ -1,0 +1,5 @@
+
+edit /etc/munin/munin-node.conf 
+change the line host * to host 0.0.0.0
+
+Ref: http://aspiredevice.com/fix-munin-404-error-in-whm-cpanel/
