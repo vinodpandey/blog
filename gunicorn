@@ -1,0 +1,7 @@
+
+
+finding number of worker threads required
+
+ 2 * `cat /proc/cpuinfo | grep 'core id' | wc -l` + 1
+ 
+Ref: http://dhilipsiva.com/2015/10/22/appropriate-number-of-gunicorn-workers.html
