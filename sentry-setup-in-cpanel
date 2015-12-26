@@ -59,6 +59,11 @@ kill -9 {id}
 mkdir -p /usr/local/apache/conf/userdata/std/2/user/website.com  
 vi /usr/local/apache/conf/userdata/std/2/user/website.com/vhost.conf  
 
+sntry clean up task to clean old data
+sentry --config=/etc/sentry.conf.py cleanup --days=30
+
+
+
 vhost.conf  
 ----------  
 ProxyPass / http://localhost:9000/  
