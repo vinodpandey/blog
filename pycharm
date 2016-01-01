@@ -1,0 +1,60 @@
+PyCharm MacOSX  
+
+Vagrant and remote interpreter setup  
+
+1. Project Setup  
+File > Open Directory - select project directory  
+
+2. Using vagrant to start project  
+Tools > Vagrant > Up  
+Terminal tab at botton shows the console where we can use vagrant provision and other commands  
+
+3. Remote Interpreter setup  
+PyCharm > Preferences  
+Project Settings > Project Interpreteres > Python Interpreters  
+Click + on right pane > Remote  
+Host: localhost  
+Port: 2222  
+User name: vagrant  
+Password: vagrant  
+Click - Test Connection  
+Python interpreter path: /vagrant/bin/python2.7  
+
+Do you want to set this interpreter as Project Interpreter? - Yes  
+
+Click - Apply & Ok  
+
+4. Configuring debug server in PyCharm  
+copy pycharm-debug.egg from PyCharm installation to virtualenv and install using easy_install  
+cp /Applications/PyCharm.app/pycharm-debug.egg .  
+sudo /vagrant/bin/easy_install pycharm-debug.egg  
+
+Run > Edit Configurations  
++ > Python Remote Debug  
+Name: django-remote-debug  
+Local host name: 192.168.1.104 (IP address of Mac - ifconfig)  
+Port: 21000  
+Path mappings:  
+/Users/vinodpandey/Projects/django1.8  
+/vagrant/website.com   
+
+5. Setup timeout for apache and gunicorn to prevent timeouts during debugging  
+vim /etc/httpd/conf/httpd.conf  
+Timeout 3600  
+
+sudo vim /etc/supervisord.conf 
+command=/vagrant/bin/python2.7 /vagrant/bin/gunicorn project.local_wsgi:application -t 3600 --bind=0.0.0.0:8000 --workers 1  
+
+6. Debugging application  
+start debug server in PyCharm  
+Run > Debug  
+Console should show:  
+Starting debug server at port 21000   
+
+start debug client on django server  
+add below code to view.py - where we want to debug the code  
+import pydevd  
+pydevd.settrace('192.168.1.104', port=21000, stdoutToServer=True, stderrToServer=True)  
+
+
+
