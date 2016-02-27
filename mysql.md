@@ -21,5 +21,5 @@ SET GLOBAL slow_query_log = 'OFF';
 
 Error log at data dir
 ```sh
-usually /var/lib/mysql in a file named {host_name}.err
+usually /var/lib/mysql in a file named {host_name}.log
 ```
