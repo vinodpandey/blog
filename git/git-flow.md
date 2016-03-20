@@ -1,23 +1,29 @@
 Git branching model  
 -------------------
 
-Initial Setup
--------------
+### Initial Setup
+```sh
 git clone git@github.com:vinodpandey/test-git-flow.git   
 cd test-git-flow    
 git branch (will show current branch)  
 * master  
+```
 
-create a develop branch  
+```sh
+# get all remove branches
+git  fetch --all
+
+# create a develop branch  
 git branch develop  
 
 git branch  
 * master  
 develop 
 
-push develop branch content to remote repo  
+# push develop branch content to remote repo  
 git checkout develop  
 git push origin develop
+```
 
 Repository setup in developer machine
 -------------------------------------
