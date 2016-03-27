@@ -90,8 +90,9 @@ naming convention: release-*
 - this branch will be deployed on QA, STAG and then production  
 - no new feature should be added to this branch. only fixes for bugs found in QAT, UAT  
 
-creating a release branch  
-see previous release versions (release tags) to decide the current release version  
+### Creating a release branch  
+```sh
+#see previous release versions (release tags) to decide the current release version  
 $ git tag -l (based on the latest tag, create a new major, minor release branch below)    
 $ git checkout -b release-1.2 develop  
 
@@ -102,14 +103,15 @@ $ git commit -a -m "Bumped version number to 1.2"
 [release-1.2 74d9424] Bumped version number to 1.2
 1 files changed, 1 insertions(+), 1 deletions(-)
 
-if required by other team members, push this to remote server (for others to work on it, will be deleted later)  
-otherwise, this step can be skipped
+#if required by other team members, push this to remote server (for others to work on it, will be deleted later)  
+#otherwise, this step can be skipped
 $ git push origin release-1.2  
-
 - fix minor bugs found during QAT, UAT   
 - no new feature  
+```
 
-finishing a release branch  
+### Finishing a release branch
+```sh
 $ git checkout master  
 $ git merge --no-ff release-1.2  
 Merge made by recursive.
@@ -119,8 +121,10 @@ $ git tag -a 1.2 -m 'version 1.2'
 push tags to remote server:
 $ git push --tags  
 $ git push origin master  
+```
 
-merge changes back to develop  
+### Merge changes back to develop  
+```sh
 $ git checkout develop  
 $ git merge --no-ff release-1.2   
 Merge made by recursive.
@@ -135,7 +139,7 @@ remove the release branch (local)
 $ git branch -d release-1.2  
 
 Deploy tag 1.2 on server  
-
+```
 
 # Hot Fix  
 includes quick production fix  
