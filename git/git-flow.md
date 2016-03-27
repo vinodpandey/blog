@@ -179,7 +179,7 @@ $ git push --tags
 $ git push origin master  
 ```
 
-# Merge the changes to develop branch and delete hotfix branch    
+### Merge the changes to develop branch and delete hotfix branch    
 ```sh
 $ git checkout develop  
 $ git merge --no-ff hotfix-1.2.1  
