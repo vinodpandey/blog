@@ -137,24 +137,24 @@ $ git branch -d release-1.2
 Deploy tag 1.2 on server  
 
 
-Hot Fix  
--------
+# Hot Fix  
 includes quick production fix  
 branch off from: master  
 merge back to master and develop    
 
-creating hotfix branch  
+### creating hotfix branch  
+```sh
 $ git checkout master  
-find out the current release tag   
+# find out the current release tag   
 $ git tag -l  
-create a hotfix version name based on the latest tag above (e.g. 1.2 for below naming convention)  
+# create a hotfix version name based on the latest tag above (e.g. 1.2 for below naming convention)  
 $ git checkout -b hotfix-1.2.1 master  
-$ ./bump-version.sh 1.2.1
+$ ./bump-version.sh 1.2.1    
 Files modified successfully, version bumped to 1.2.1.
-$ git commit -a -m "Bumped version number to 1.2.1"
-[hotfix-1.2.1 41e61bb] Bumped version number to 1.2.1
-1 files changed, 1 insertions(+), 1 deletions(-)
-
+$ git commit -a -m "Bumped version number to 1.2.1"  
+[hotfix-1.2.1 41e61bb] Bumped version number to 1.2.1  
+1 files changed, 1 insertions(+), 1 deletions(-)  
+```
 
 checkin the fix  
 $ git add {files changed}  
