@@ -142,7 +142,7 @@ includes quick production fix
 branch off from: master  
 merge back to master and develop    
 
-### creating hotfix branch  
+### Creating hotfix branch  
 ```sh
 $ git checkout master  
 # find out the current release tag   
@@ -156,40 +156,42 @@ $ git commit -a -m "Bumped version number to 1.2.1"
 1 files changed, 1 insertions(+), 1 deletions(-)  
 ```
 
-checkin the fix  
+### Checkin the fix  
+```sh
 $ git add {files changed}  
-commit the fix  
+# commit the fix  
 $ git commit -m "Fixed severe production problem"  
+```
 
-
-merging changes back to master and creating tag  
+### Merging changes back to master
+```sh
 $ git checkout master  
 $ git merge --no-ff hotfix-1.2.1  
 Merge made by recursive.
 (Summary of changes)
+```
 
+### Creating tag
+```sh
 $ git tag -a 1.2.1  
-
-push tags and changes to remote server:
+# push tags and changes to remote server:
 $ git push --tags  
 $ git push origin master  
+```
 
-merge the changes to develop branch    
+# Merge the changes to develop branch and delete hotfix branch    
+```sh
 $ git checkout develop  
 $ git merge --no-ff hotfix-1.2.1  
 Merge made by recursive.
 (Summary of changes)
+$ git push origin develop  
+# delete the temporary branch    
+$ git branch -d hotfix-1.2.1   
+```
 
 Note: The one exception to the rule here is that, when a release branch currently exists,   
 the hotfix changes need to be merged into that release branch, instead of develop.
-
-$ git push origin develop  
-
-delete the temporary branch    
-$ git branch -d hotfix-1.2.1   
-
-
-
 
 
 Ref: 
