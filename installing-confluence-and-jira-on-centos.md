@@ -99,6 +99,20 @@ sudo -u jira bash
 ./start-jira.sh  
 ```
 
+backup
+-------
+```sh
+tar zcvf jira.tar.gz /var/atlassian/application-data/jira
+export mysql database jira
+```
+
+restore
+--------
+
+
+
+
+
 insalling confluence  
 ---------------------  
 sudo chmod a+x atlassian-confluence-5.6.6-x64.bin  
