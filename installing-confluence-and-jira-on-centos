@@ -5,7 +5,7 @@ installing-confluence-and-jira-on-centos
 copying setup files to server  
 ------------------------------  
 scp -rv atlassian-confluence-5.6.6-x64.bin root@192.168.33.12:/opt/  
-scp -rv atlassian-jira-6.3.13-x64.bin root@192.168.33.12:/opt/  
+scp -rv atlassian-jira-software-7.1.7-jira-7.1.7-x64.bin root@192.168.33.12:/opt/  
 
 installing java  
 ----------------  
@@ -14,29 +14,38 @@ java -version
 echo $JAVA_HOME  
 
 installing java  
+```sh
 sudo yum install java-1.7.0-openjdk-devel  
+```
 
 setting up JAVA_HOME  
-find java install location   
+```sh
+# find java install location   
 update-alternatives --display java  
 /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java  
 
 cd /etc/profile.d  
 vim java_home.sh  
 export JAVA_HOME=/usr/lib/jvm/jre-1.7.0-openjdk.x86_64  
+close and reopen terminal for changes to take effect
+echo $JAVA_HOME
+```
+
+
 
 insalling jira  
 ---------------  
-sudo chmod a+x atlassian-jira-6.3.13-x64.bin  
-sudo ./atlassian-jira-6.3.13-x64.bin  
+sudo chmod a+x atlassian-jira-software-7.1.7-jira-7.1.7-x64.bin
+sudo ./atlassian-jira-software-7.1.7-jira-7.1.7-x64.bin 
 o, Enter  
 2, Enter (Custom install)  
-instal location: /opt/atlassian/jira  
+install location: /opt/atlassian/jira  
 data location: /var/atlassian/application-data/jira  
 2 - custom ports  
-HTTP - 8080  
-Control port - 8085  
+HTTP - 8090  
+Control port - 8095  
 y, Enter - JIRA as a service  
+i, Enter
 
 setup mysql drivers  
 --------------------  
