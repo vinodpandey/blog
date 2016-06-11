@@ -10,8 +10,10 @@ scp -rv atlassian-jira-software-7.1.7-jira-7.1.7-x64.bin root@192.168.33.12:/opt
 installing java  
 ----------------  
 verify if java already installed and JAVA_HOME is set  
+```sh
 java -version  
 echo $JAVA_HOME  
+```
 
 installing java  
 ```sh
@@ -35,6 +37,7 @@ echo $JAVA_HOME
 
 insalling jira  
 ---------------  
+```sh
 sudo chmod a+x atlassian-jira-software-7.1.7-jira-7.1.7-x64.bin
 sudo ./atlassian-jira-software-7.1.7-jira-7.1.7-x64.bin 
 o, Enter  
@@ -46,21 +49,32 @@ HTTP - 8090
 Control port - 8095  
 y, Enter - JIRA as a service  
 i, Enter
+```
 
 setup mysql drivers  
 --------------------  
-stop jira server  
+```sh
+# stop jira server  
+cd /opt/atlassian/jira/bin  
+sudo -u jira bash  
+./stop-jira.sh  
+exit 
+
 cd /opt/  
 sudo wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.34.tar.gz  
 sudo tar zxvf mysql-connector-java-5.1.34.tar.gz  
-cp mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/  
+sudo cp mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/  
 
-start jira server  
-
+start jira server 
+cd /opt/atlassian/jira/bin  
+sudo -u jira bash  
+./start-jira.sh 
+```
 
 post installation steps  
 ------------------------  
-access - http://192.168.33.12:8080/  
+```sh
+access - http://192.168.33.12:8090/  
 I'll set it up myself - Next  
 My own database  
 Enter mysql database details  
@@ -73,15 +87,17 @@ JIRA + JIRA Agile
 Add licence  
 Setup admin account  
 Setup email notification later  
+```
 
 starting/stoppin jira server  
 -----------------------------  
+```sh
 custom wizard creates default user - jira - for running server  
 cd /opt/atlassian/jira/bin  
 sudo -u jira bash  
 ./stop-jira.sh  
 ./start-jira.sh  
-
+```
 
 insalling confluence  
 ---------------------  
