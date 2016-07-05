@@ -8,8 +8,8 @@ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2F
 
 tar xzf jdk-8u91-linux-x64.tar.gz
 
-# alternatives --install /usr/bin/java java /opt/jdk1.8.0_91/bin/java 2
-# alternatives --config java
+alternatives --install /usr/bin/java java /opt/jdk1.8.0_91/bin/java 2
+alternatives --config java
 
 
 There are 3 programs which provide 'java'.
