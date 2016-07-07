@@ -113,7 +113,7 @@ $ git push origin release-1.2
 ### Finishing a release branch
 ```sh
 $ git checkout master  
-$ git merge --no-ff release-1.2  
+$ git merge --no-ff release-1.2 -m "merged branch 1.2"  
 Merge made by recursive.
 (Summary of changes)
 
@@ -126,7 +126,7 @@ $ git push origin master
 ### Merge changes back to develop  
 ```sh
 $ git checkout develop  
-$ git merge --no-ff release-1.2   
+$ git merge --no-ff release-1.2 -m "merged branch 1.2"   
 Merge made by recursive.
 (Summary of changes)
 
