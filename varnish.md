@@ -2,3 +2,7 @@
 ```sh
 varnishadm "ban req.url ~ ."
 ```
+#### logging
+```sh
+varnishlog
+```
