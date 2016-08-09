@@ -81,3 +81,42 @@ Reload privilege tables now? [Y/n] Y
 # verify the new password is working properly
 mysql -uroot -p
 ```
+
+#### phpMyAdmin
+```sh
+yum -y install phpmyadmin
+# enable localhost access
+sudo vim /etc/httpd/conf.d/phpMyAdmin.conf
+comment out all RequireAny
+and change 
+Deny from All
+to 
+Allow from All
+
+sudo /etc/init.d/httpd restart
+Access: http://localhost:8080/phpmyadmin
+```
+
+#### Python 2.7.10
+```sh
+cd /usr/local/src
+wget --no-check-certificate -O virtualenv-pip-python2.7.10.sh https://raw.github.com/vinodpandey/scripts/master/virtualenv-pip-python2.7.10.sh  
+chmod +x virtualenv-pip-python2.7.10.sh  
+./virtualenv-pip-python2.7.10.sh 
+python2.7 -V 
+```
+
+#### Enable services to autostart on desktop restart
+```sh
+/etc/init.d/httpd start
+/etc/init.d/memcached 
+/etc/init.d/mysqld start
+chkconfig --level 345 memcached on
+chkconfig --level 345 mysqld on
+chkconfig --level 345 httpd on
+```
+
+#### timezone setup
+```sh
+ln -fs /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+```
