@@ -1,46 +1,49 @@
-Beginners Guide to Using Vagrant
+# Beginners Guide to Using Vagrant
 
-Software Versions used in tutorial
-----------------------------------
+## Software Versions used in tutorial
+```
 Vagrant 1.6.3
 VirtualBox 4.3.12
+```
 
-Installation
--------------
-Install vagrant 
+## Installation
+#### Install vagrant 
 http://www.vagrantup.com/downloads.html
-
+```sh
 vagrant -v (should return Vagrant x.x.x)
-
-all available command options
+# all available command options
 vagrant help
+```
 
-For vagrant ssh to work in windows
-----------------------------------
-Install git
-update %PATH% with C:\Git\bin (It contains sh.exe)
+#### For vagrant ssh to work in windows
+* Install git
+* update %PATH% with C:\Git\bin (It contains sh.exe)
 
-
-Add Boxes 
----------
-Add boxes to local machines (can be resused in multiple projects)
-
-Vagrant box location (added using vagrant box add):
-Mac/Linux
-~/.vagrant.d/boxes
-
+#### Add Boxes 
+```sh
+# Add boxes to local machines (can be resused in multiple projects)
 vagrant box add centos-65-x64 http://puppet-vagrant-boxes.puppetlabs.com/centos-65-x64-virtualbox-puppet.box
+# Vagrant box location (added using vagrant box add):
+# Mac/Linux
+~/.vagrant.d/boxes
+```
 
+#### General flow
+```sh
+# List all boxes
+vagrant box list
+```
 
-Useful commands
-----------------
+#### Useful commands
+```sh
 vagrant init
 vagrant up
 vagrant ssh
 vagrant halt
 vagrant destroy
+```
 
-Reference:-
+#### Reference:
 1. http://docs.vagrantup.com/v2/getting-started/boxes.html
 2. http://blog.smalleycreative.com/tutorials/setup-a-django-vm-with-vagrant-virtualbox-and-chef/
 3. https://speakerdeck.com/lewg/consistent-local-development-with-vagrant-and-chef
