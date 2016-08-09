@@ -32,6 +32,15 @@ vagrant box add centos-65-x64 http://puppet-vagrant-boxes.puppetlabs.com/centos-
 ```sh
 # List all boxes
 vagrant box list
+centos-63-x64    (virtualbox, 0)
+centos-65-x64    (virtualbox, 0)
+ubuntu-12.04-x64 (virtualbox, 0)
+
+vagrant init centos-65-x64
+vagrant up
+vagrant ssh
+vagrant halt
+vagrnat destroy
 ```
 
 #### Useful commands
