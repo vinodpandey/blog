@@ -32,3 +32,9 @@ _mysql             89   0.0  0.2  3208428  40508   ??  Ss    1Mar16   2:39.50 /u
 cd /usr/local/mysql/data
 Vinods-MacBook-Pro.log
 ```
+
+#### MySQL Performance
+* http://chrisgilligan.com/consulting/tuning-apache-and-mysql-for-best-performance-in-a-shared-virtual-hosting-environment/
+* mysql performance guide
+* https://www.digitalocean.com/community/tutorials/how-to-install-mysql-5-6-from-official-yum-repositories
+* http://www.tocker.ca/2013/09/10/improving-mysqls-default-configuration.html
