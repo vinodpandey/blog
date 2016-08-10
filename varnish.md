@@ -6,5 +6,5 @@ varnishadm "ban req.url ~ ."
 ```sh
 varnishlog
 # for testing a particular request
-varnishlog | grep "rquest url path"
+varnishlog | grep "request url path"
 ```
