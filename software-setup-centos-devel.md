@@ -14,7 +14,7 @@ sudo su
 
 #### Basic software installation
 ```sh
-sudo yum install -y wget vim git memcached
+sudo yum install -y wget vim git memcached gcc libffi-devel python-devel openssl-devel java  
 ```
 
 #### Enable epel repo
