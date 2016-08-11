@@ -7,6 +7,22 @@
 
 WARNING: Below configurations are for development server only and should never be used in production.
 
+#### Creating a bootable CentOS USB
+```sh
+Download iso file (http://ftp.iitm.ac.in/centos/6.8/isos/x86_64/CentOS-6.8-x86_64-bin-DVD1.iso)
+Use http://iso2usb.sourceforge.net/ to create bootable usb
+Create free space on desktop for installing CentOS
+Use USB to boot and install 
+```
+
+#### Adding user to sudoers
+```sh
+vim /etc/sudoers
+uncomment - 
+# %wheel ALL=(ALL)   NOPASSWD:ALL
+usermod -a -G wheel username
+```
+
 #### Switch to root user
 ```sh
 sudo su
