@@ -71,6 +71,11 @@ rpm -Uvh ius-release*.rpm
 yum -y install yum-plugin-replace
 # below command may show warning that some packages are not matched. Ignore that and press y
 yum replace php --replace-with php55u
+
+php -v
+PHP 5.5.38 (cli) (built: Jul 21 2016 14:12:41) 
+Copyright (c) 1997-2015 The PHP Group
+Zend Engine v2.5.0, Copyright (c) 1998-2015 Zend Technologies
 ```
 
 #### MySQL
