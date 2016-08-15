@@ -22,6 +22,10 @@ visudo -f /etc/sudoers
 uncomment - 
 # %wheel ALL=(ALL)   NOPASSWD:ALL
 usermod -a -G wheel username
+
+# logout and login again
+# to test
+sudo ls
 ```
 
 #### Switch to root user
