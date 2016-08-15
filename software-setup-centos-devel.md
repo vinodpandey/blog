@@ -161,6 +161,17 @@ chkconfig --level 345 memcached on
 
 ```
 
+#### Installing NodeJS
+```sh
+yum install -y gcc-c++ make
+curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+node -v
+v6.3.1
+npm -v
+3.10.3
+npm install -g gulp-cli bower
+```
+
 #### Installing Chrome
 ```sh
 cd /usr/local/src
