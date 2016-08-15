@@ -100,7 +100,7 @@ enabled=1
 # Enable to use MySQL 5.7
 enabled=0
 
-yum -y install mysql-server mysql-devel libffi-devel
+yum -y install mysql mysql-server mysql-devel libffi-devel
 service mysqld start
 mysql_secure_installation
 Enter current password for root (enter for none): Press Enter
@@ -112,6 +112,12 @@ Reload privilege tables now? [Y/n] Y
 
 # verify the new password is working properly
 mysql -uroot -p
+
+mysql -V
+mysql  Ver 14.14 Distrib 5.6.32, for Linux (x86_64) using  EditLine wrapper
+
+chkconfig --level 345 mysqld on
+
 ```
 
 #### phpMyAdmin
