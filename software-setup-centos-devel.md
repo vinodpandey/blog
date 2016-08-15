@@ -53,6 +53,12 @@ yum -y install httpd
 vim /etc/httpd/conf/httpd.conf
 Listen 8080
 service httpd restart
+
+chkconfig --level 345 httpd on
+
+httpd -v
+Server version: Apache/2.2.15 (Unix)
+Server built:   Jul 18 2016 15:24:00
 ```
 
 #### PHP
