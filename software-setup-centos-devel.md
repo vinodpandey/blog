@@ -131,7 +131,15 @@ Deny from All
 to 
 Allow from All
 
-sudo /etc/init.d/httpd restart
+<Directory /usr/share/phpMyAdmin/>
+
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/>
+
+</Directory>
+
+service httpd restart
 Access: http://localhost:8080/phpmyadmin
 ```
 
