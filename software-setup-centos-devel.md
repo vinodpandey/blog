@@ -17,7 +17,8 @@ Use USB to boot and install
 
 #### Adding user to sudoers
 ```sh
-vim /etc/sudoers
+su
+visudo -f /etc/sudoers
 uncomment - 
 # %wheel ALL=(ALL)   NOPASSWD:ALL
 usermod -a -G wheel username
