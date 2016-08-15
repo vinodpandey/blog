@@ -150,16 +150,28 @@ wget --no-check-certificate -O virtualenv-pip-python2.7.10.sh https://raw.github
 chmod +x virtualenv-pip-python2.7.10.sh  
 ./virtualenv-pip-python2.7.10.sh 
 python2.7 -V 
+Python 2.7.10
 ```
 
-#### Enable services to autostart on desktop restart
+#### Installing memcached
 ```sh
-/etc/init.d/httpd start
-/etc/init.d/memcached 
-/etc/init.d/mysqld start
+yum -y install memcached
+service memcached start
 chkconfig --level 345 memcached on
-chkconfig --level 345 mysqld on
-chkconfig --level 345 httpd on
+
+```
+
+#### Installing Chrome
+```sh
+cd /usr/local/src
+wget http://chrome.richardlloyd.org.uk/install_chrome.sh
+sudo bash install_chrome.sh
+
+To update Google Chrome, run "yum update google-chrome-stable" or
+simply re-run this script with "./install_chrome.sh".
+
+To uninstall Google Chrome and its dependencies added by this script,
+run "yum remove google-chrome-stable chrome-deps-stable" or "./install_chrome.sh -u".
 ```
 
 #### timezone setup
