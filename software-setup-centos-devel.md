@@ -125,8 +125,8 @@ chkconfig --level 345 mysqld on
 yum -y install phpmyadmin
 # enable localhost access
 sudo vim /etc/httpd/conf.d/phpMyAdmin.conf
-comment out all RequireAny
-and change 
+
+change 
 Deny from All
 to 
 Allow from All
