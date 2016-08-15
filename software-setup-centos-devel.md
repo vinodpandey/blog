@@ -4,6 +4,10 @@
 * PHP
 * phpMyAdmin
 * Python
+* Memcache
+* NodeJS
+* Chrome
+* SSH key in bitbucket
 
 WARNING: Below configurations are for development server only and should never be used in production.
 
@@ -188,4 +192,17 @@ run "yum remove google-chrome-stable chrome-deps-stable" or "./install_chrome.sh
 #### timezone setup
 ```sh
 ln -fs /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+```
+
+#### SSH in bitbucket
+```sh
+ls -al ~/.ssh
+# Lists the files in your .ssh directory, if they exist
+# Use below command to generate SSH key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+cat ~/.ssh/id_rsa.pub
+# in MacOSX
+pbcopy < ~/.ssh/id_rsa.pub
+# copy the key in account profile in bitbucket
 ```
