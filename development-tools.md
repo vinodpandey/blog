@@ -4,6 +4,7 @@
 * https://ngrok.com/ - Secure tunnels to localhost
 * http://requestb.in/ - Inspect HTTP Requests
 * https://hyperdev.com/ - Online developer playground with NodeJS and online editor
+* http://blog.klipse.tech/javascript/2016/06/20/blog-javascript.html - Embedding javascript code on webpages
 
 Security
 * [BruteXSS - Cross-Site Scripting BruteForcer](https://github.com/shawarkhanethicalhacker/BruteXSS/) 
