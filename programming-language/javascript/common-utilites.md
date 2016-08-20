@@ -1,1 +1,5 @@
-
+* [Client-side image placeholders](https://github.com/imsky/holder )
+* [Accelerated JavaScript animation](http://velocityjs.org/)
+* [jQuery Hotkeys lets you watch for keyboard events anywhere in your code supporting almost any key combination](https://github.com/jeresig/jquery.hotkeys)
+* [An onload handler for images supporting cached data](https://github.com/mixonic/load_image)
+* [Date countdown](http://hilios.github.io/jQuery.countdown/)
