@@ -1,3 +1,21 @@
+# Udacity courses
+* Client-Server Communication https://www.udacity.com/course/client-server-communication--ud897
+* Web Accessibility https://www.udacity.com/course/web-accessibility--ud891
+* Product Design Validation and UX through Design Sprints
+* Rapid Prototyping https://www.udacity.com/course/rapid-prototyping--ud723
+* Offline Web Applications https://www.udacity.com/course/offline-web-applications--ud899
+* Web Tooling & Automation https://www.udacity.com/course/web-tooling-automation--ud892
+* Designing RESTful APIs https://www.udacity.com/course/designing-restful-apis--ud388
+* Writing READMEs https://www.udacity.com/course/writing-readmes--ud777
+* Intro to HTML and CSS https://www.udacity.com/course/intro-to-html-and-css--ud304
+* JavaScript Basics https://www.udacity.com/course/javascript-basics--ud804
+* Intro to jQuery https://www.udacity.com/course/intro-to-jquery--ud245
+* Intro to AJAX https://www.udacity.com/course/intro-to-ajax--ud110
+* Software Architecture & Design https://www.udacity.com/course/software-architecture-design--ud821
+* Software Development Process https://www.udacity.com/course/software-development-process--ud805
+* Website Performance Optimization https://www.udacity.com/course/website-performance-optimization--ud884 
+
+
 #copyrighting
 http://www.copyblogger.com/copywriting-101/
 http://www.smashingmagazine.com/2012/05/18/quick-course-on-effective-website-copywriting/
