@@ -14,6 +14,8 @@
 * Software Architecture & Design https://www.udacity.com/course/software-architecture-design--ud821
 * Software Development Process https://www.udacity.com/course/software-development-process--ud805
 * Website Performance Optimization https://www.udacity.com/course/website-performance-optimization--ud884 
+* Intro to Algorithms https://www.udacity.com/course/intro-to-algorithms--cs215
+* Technical Interview https://www.udacity.com/course/technical-interview--ud513
 
 
 #copyrighting
