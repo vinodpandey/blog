@@ -2,6 +2,7 @@
 ## Design Patterns
 ### Onine Course
 * https://www.udacity.com/course/javascript-design-patterns--ud989
+
 ### Links
 * https://addyosmani.com/resources/essentialjsdesignpatterns/book/
 * http://shichuan.github.io/javascript-patterns/
