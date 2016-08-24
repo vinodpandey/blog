@@ -15,7 +15,7 @@ Copyright (c) 2006-2015 Varnish Software AS
 ```sh
 varnishadm "ban req.url ~ ."
 ```
-#### logging
+#### Logging
 ```sh
 varnishlog
 # for testing a particular request
