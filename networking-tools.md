@@ -3,6 +3,7 @@
 yum -y install tcpdump
 tcpdump -n port mysql
 ```
+* https://danielmiessler.com/study/tcpdump/
 
 #### netstat
 ```sh
