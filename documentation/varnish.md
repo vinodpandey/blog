@@ -33,3 +33,6 @@ varnishlog
 # for testing a particular request
 varnishlog | grep "request url path"
 ```
+
+#### Links
+* https://speakerdeck.com/thijsferyn/common-scenarios-in-vcl-varnish-summit-cph-2016
