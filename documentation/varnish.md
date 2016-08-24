@@ -11,10 +11,17 @@ Copyright (c) 2006 Verdens Gang AS
 Copyright (c) 2006-2015 Varnish Software AS
 ```
 
+#### Config Files
+```sh
+/etc/sysconfig/varnish
+/etc/varnish/default.vcl
+```
+
 #### Clear complete cache
 ```sh
 varnishadm "ban req.url ~ ."
 ```
+
 #### Logging
 ```sh
 varnishlog
