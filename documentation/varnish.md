@@ -17,6 +17,11 @@ Copyright (c) 2006-2015 Varnish Software AS
 /etc/varnish/default.vcl
 ```
 
+#### Starting/Stopping server
+```sh
+service varnish start/stop/restart
+```
+
 #### Clear complete cache
 ```sh
 varnishadm "ban req.url ~ ."
