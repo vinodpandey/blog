@@ -36,3 +36,4 @@ varnishlog | grep "request url path"
 
 #### Links
 * https://speakerdeck.com/thijsferyn/common-scenarios-in-vcl-varnish-summit-cph-2016
+* https://www.datadoghq.com/blog/top-varnish-performance-metrics/
