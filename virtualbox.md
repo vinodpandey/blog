@@ -16,3 +16,8 @@ sudo ./VBoxLinuxAdditions.run
 Ref:  
 http://wiki.centos.org/HowTos/Virtualization/VirtualBox/CentOSguest  
 http://wiki.centos.org/AdditionalResources/Repositories/RPMForge#head-f0c3ecee3dbb407e4eed79a56ec0ae92d1398e01  
+
+## Mounting shared folder
+```sh
+sudo mount -t vboxsf share /home/folder/path
+```
