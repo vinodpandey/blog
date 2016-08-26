@@ -33,6 +33,14 @@ cd /usr/local/mysql/data
 Vinods-MacBook-Pro.log
 ```
 
+#### Temporarily disable foreign key check
+```sh
+# Disable
+SET FOREIGN_KEY_CHECKS=0;
+# Enable
+SET FOREIGN_KEY_CHECKS=1;
+```
+
 #### MySQL Performance
 * http://chrisgilligan.com/consulting/tuning-apache-and-mysql-for-best-performance-in-a-shared-virtual-hosting-environment/
 * mysql performance guide
