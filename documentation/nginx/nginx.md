@@ -9,7 +9,7 @@ gpgcheck=0
 enabled=1
 
 yum -y install nginx
-``
+```
 ## Config
 ```sh
 /etc/nginx/nginx.conf
