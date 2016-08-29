@@ -12,6 +12,34 @@ sudo service httpd start/stop/status/reload
 sudo /sbin/chkconfig --levels 235 httpd on
 ```
 
+## httpd in worker mode
+```sh
+vim /etc/sysconfig/httpd
+# uncomment below line
+HTTPD=/usr/sbin/httpd.worker
+#restart http server
+sudo service httpd restart
+```
+
+```sh
+# Verifying that httpd is running in worker mode
+# update httpd.conf file with below setting
+sudo vim /etc/httpd/conf/httpd.conf
+
+<Location /server-info>
+    SetHandler server-info
+    Order deny,allow
+    Deny from all
+    Allow from 127.0.0.1
+</Location>
+
+sudo service httpd restart
+
+yum -y install lynx
+lynx http://127.0.0.1/server-info
+Server Setting > MPM Name - worker
+```
+
 ## Name based virtual hosts
 ```sh
 sudo vim /etc/httpd/conf/httpd.conf
