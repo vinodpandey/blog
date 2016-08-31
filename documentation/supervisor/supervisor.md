@@ -2,6 +2,7 @@
 ```sh
 sudo pip2.7 install supervisor
 sudo ln -sfn /usr/local/bin/supervisord /usr/bin/supervisord
+sudo ln -sfn /usr/local/bin/supervisorctl /usr/bin/supervisorctl  
 sudo mkdir -p /var/log/gunicorn/
 ```
 
@@ -9,6 +10,22 @@ sudo mkdir -p /var/log/gunicorn/
 ```sh
 echo_supervisord_conf > supervisord.conf
 sudo mv supervisord.conf /etc/
+```
+
+## Managing 
+```sh
+# start  
+sudo /usr/bin/supervisord -c /etc/supervisord.conf 
+
+#stop
+sudo supervisorctl shutdown
+
+# status  
+sudo supervisorctl status  
+
+sudo supervisorctl start gunicorn_website  
+sudo supervisorctl stop gunicorn_website
+ps aux | grep gunicorn_website
 ```
 
 ## Gunicorn & Django
