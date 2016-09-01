@@ -41,4 +41,20 @@ stdout_logfile = /var/log/gunicorn/project-std.log
 stderr_logfile = /var/log/gunicorn/project-err.log
 ```
 
+## Celery & Django
+```sh
+sudo mkdir -p /var/log/celery
 
+[program:celeryd]
+command=/home/user/virtualenv/bin/celery worker -A project --loglevel=INFO
+directory=/home/user/virtualenv/project
+user=nobody
+numprocs=1
+stdout_logfile=/var/log/celery/celeryd-std.log
+stderr_logfile=/var/log/celery/celeryd-err.log
+autostart=true
+autorestart=true
+startsecs=10
+stopwaitsecs = 600
+killasgroup=true
+```
