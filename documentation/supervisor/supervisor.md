@@ -1,6 +1,7 @@
 ## Installation
 ```sh
 sudo pip2.7 install supervisor
+(to setup pip2.7 https://github.com/vinodpandey/scripts/blob/master/virtualenv-pip-python2.7.10.sh)
 sudo ln -sfn /usr/local/bin/supervisord /usr/bin/supervisord
 sudo ln -sfn /usr/local/bin/supervisorctl /usr/bin/supervisorctl  
 sudo mkdir -p /var/log/gunicorn/
