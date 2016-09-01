@@ -46,7 +46,7 @@ stderr_logfile = /var/log/gunicorn/project-err.log
 sudo mkdir -p /var/log/celery
 
 [program:celeryd]
-command=/home/virtualenv/bin/celery worker -A project --loglevel=INFO --concurrency=4
+command=/home/virtualenv/bin/celery worker -A project --loglevel=INFO --concurrency=4 -n worker%(process_num)s.%%h
 directory=/home/virtualenv/project
 user=vagrant
 numprocs=4
