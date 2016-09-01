@@ -86,12 +86,12 @@ rabbitmqctl set_user_tags newadmin administrator
 rabbitmqctl set_permissions -p / newadmin ".*" ".*" ".*"
 
 
-http://server-name:15672/ (guest/guest)
+http://server-name:15672/ (newadmin/password)
 ```
 
 ## Deleting guest user
 ```sh
-http://server-name:15672/ (guest/guest)
+http://server-name:15672/ (newadmin/password)
 Home > Admin
 ```
 
