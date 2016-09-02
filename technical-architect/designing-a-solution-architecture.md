@@ -19,3 +19,11 @@ recovery should work.
 *  Given a scenario, determine the performance requirements for the  architecture, and
 demonstrate best practices around performance optimization.
 * Identifying and recommending a security model
+
+
+#### Multilayered architecture
+##### Common layers in multilayer architecture
+* Presentation layer 
+* Application layer 
+* Business layer 
+* Data access layer
