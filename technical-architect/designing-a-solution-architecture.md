@@ -1,4 +1,6 @@
 * Define what is meant by conceptual, logical, and physical architectures.
+ 
+
 #### Physical Architecture
 * Network capabilites (security, reliability & performance)
 * Server specifications
