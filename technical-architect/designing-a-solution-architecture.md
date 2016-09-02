@@ -1,6 +1,6 @@
 * Define what is meant by conceptual, logical, and physical architectures.
 
-[Physical Architecture](https://i-technet.sec.s-msft.com/dynimg/IC384990.jpg) 
+![Physical Architecture](https://i-technet.sec.s-msft.com/dynimg/IC384990.jpg) 
 
 * Given an architecture diagram, determine which type of architecture is being used (Architecture
 types include: conceptual, logical, and physical)
