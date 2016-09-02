@@ -2,9 +2,11 @@
  
 
 #### Physical Architecture
+
 * Network capabilites (security, reliability & performance)
 * Server specifications
 * Hardware requirements
+ 
 ![Physical Architecture](https://i-technet.sec.s-msft.com/dynimg/IC384990.jpg) 
 
 * Given an architecture diagram, determine which type of architecture is being used (Architecture
