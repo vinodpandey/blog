@@ -31,9 +31,10 @@ https://github.com/airbnb/javascript
 * [Date countdown](http://hilios.github.io/jQuery.countdown/)
 
 
-
-
-
+```
+"use strict"
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+```
 
  
 
