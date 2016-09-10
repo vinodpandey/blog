@@ -236,7 +236,11 @@ $ git push origin develop
 delete the temporary branch  
 $ git branch -d hotfix-1.2.1  
 
-
+## Branches
+fetch all branches 
+git fetch --all
+git branch -a
+git checkout branch
 
 
 
