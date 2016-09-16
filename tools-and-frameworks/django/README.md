@@ -4,11 +4,11 @@
 ## Migrations
 ### Workflow
 * Create or update a model
-* Create migrations
+* Create migrations  
   ```
   ./manage.py makemigrations <app_name>
   ```
-* Apply migrations
+* Apply migrations  
   ```
   ./manage.py migrate <app_name>
   ```
@@ -17,13 +17,13 @@
 * List all migrations  
   ```
   ./manage.py showmigrations --list  
-  ./manage.py showmigrations <app_name> --list
+  ./manage.py showmigrations <app_name> --list  
   ```
-* Generate SQL for migration
+* Generate SQL for migration  
   ```
   ./manage.py sqlmakemigrate <app_name> <migration_name>
   ```
-* Fake migrations
+* Fake migrations  
   ```
   ./manage.py migrate --fake <appname>
   ```
