@@ -17,6 +17,7 @@
 * List all migrations
   ```
   ./manage.py showmigrations --list
+  ./manage.py showmigrations <app_name> --list
   ```
 * Generate SQL for migration
   ```
