@@ -82,6 +82,15 @@ grep "23/Jan/2013:06" example.com | cut -d[ -f2 | cut -d] -f1 | awk -F: '{print 
 /etc/httpd/logs/access_log
 ```
 
+## Making a folder writable for apache
+```sh
+# find out the file owner name
+ps -ef | grep httpd | grep -v grep
+
+chgrp apache /path/to/mydir
+chmod g+w /path/to/mydir
+```
+
 ## Optimization
 * http://www.tecmint.com/apache-performance-tuning/
 * https://rudd-o.com/linux-and-free-software/tuning-an-apache-server-in-5-minutes
