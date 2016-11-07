@@ -66,7 +66,12 @@ grep "23/Jan" example.com | cut -d[ -f2 | cut -d] -f1 | awk -F: '{print $2":00"}
 
 # access per minute
 grep "23/Jan/2013:06" example.com | cut -d[ -f2 | cut -d] -f1 | awk -F: '{print $2":"$3}' | sort -nk1 -nk2 | uniq -c | awk '{ if ($1 > 10) print $0}'
+
+# url accessed per day
+grep "/downloads/getfile" access_log | cut -d'[' -f2 | cut -d: -f1 | uniq -c
 ```
+
+
 
 ## Config Files
 ```sh
