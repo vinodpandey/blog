@@ -33,6 +33,11 @@ cd /usr/local/mysql/data
 Vinods-MacBook-Pro.log
 ```
 
+#### MySQL remote login
+```sh
+mysql -uUSERNAME -p -h REMOTE_SERVER_IP DB_NAME
+```
+
 #### Temporarily disable foreign key check
 ```sh
 # Disable
