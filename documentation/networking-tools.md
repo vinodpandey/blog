@@ -12,5 +12,6 @@ tcpdump -ni eth0 -c 100
 ```sh
 netstat -lnp | grep mysql
 netstat -na | grep -i list
+netstat -tnlp
 telnet localhost 3306
 ```
