@@ -90,6 +90,13 @@ working on tag:
 git checkout <tag_name>
 
 
+# Why does git merge a branch into itself?
+```
+Ref: http://stackoverflow.com/questions/31463025/why-does-git-merge-a-branch-into-itself
+
+git pull --rebase
+```
+
 
 
 
