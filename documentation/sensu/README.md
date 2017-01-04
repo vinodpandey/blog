@@ -92,6 +92,17 @@ NameVirtualHost *:8080
 # change port to 8080
 Listen 8080
 
+# add below lines at the end of httpd.conf to restrict ip based access for https
+<VirtualHost _default_:443>
+ SSLEngine on
+ SSLCertificateFile /etc/pki/tls/certs/ca.crt
+ SSLCertificateKeyFile /etc/pki/tls/private/ca.key
+ ServerName xx.xx.xx.xx
+ <Location />
+  Order deny,allow
+  Deny from all
+  </Location>
+</VirtualHost>
 
 
 sudo service httpd restart
