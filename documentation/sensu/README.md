@@ -622,4 +622,7 @@ sudo vim /etc/sensu/conf.d/transport.json
 Start or stop the Sensu client
 sudo service sensu-client start
 sudo service sensu-client stop
+
+# check logs for issues
+sudo tail -f /var/log/sensu/sensu-client.log 
 ```
