@@ -16,19 +16,28 @@ Internet -> apache2:443 -> uchiwa:3001 -> sensu-api:4567
 
 # Base setup
 ### base softwares
+```
 sudo yum -y install git wget vim
+```
 
 ### timezone to india
+```
 sudo ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+```
 
 ### semanage for managing permissions with selinux
+```
 sudo yum -y install policycoreutils-python setroubleshoot-server
 # sudo sealert -a /var/log/audit/audit.log 
+```
 
 ### enable remote connections on port 80 for httpd
+```
 sudo setsebool -P httpd_can_network_connect on
+```
 
 ### System-wide File Descriptors (FD) Limits
+```
 sudo sysctl -w fs.file-max=100000
 sudo vim /etc/sysctl.conf
 fs.file-max = 100000
@@ -41,14 +50,17 @@ sudo vim /etc/security/limits.conf
 
 
 Restart server for these changes to take effect
-
+```
 
 # Graphite and Carbon with sqlite database
 
 ### Installing alternate python 2.7.12
+```
 https://github.com/vinodpandey/scripts/blob/master/virtualenv-pip-python2.7.12.sh
+```
 
 ### Apache with mod_wsgi (compiled with python 2.7.12), SSL and VirtualHost (for SSL)
+```
 sudo yum -y install httpd httpd-devel mod_ssl openssl
 
 cd ~
@@ -97,9 +109,10 @@ cd mod_wsgi-4.5.11/
 make
 sudo make install
 module location: /usr/lib64/httpd/modules/mod_wsgi.so
-
+```
 
 ### Installing Graphite
+```
 sudo yum -y install python-devel cairo-devel libffi-devel
 
 sudo su
@@ -112,6 +125,7 @@ source bin/activate
 pip2.7 install https://github.com/graphite-project/whisper/tarball/master
 pip2.7 install https://github.com/graphite-project/carbon/tarball/master
 pip2.7 install https://github.com/graphite-project/graphite-web/tarball/master
+
 
 ## Configuring Graphite
 
@@ -169,9 +183,10 @@ sudo sealert -a /var/log/audit/audit.log
 sudo semodule -i mypol.pp
 
 sudo service httpd restart
+```
 
 ### configuring carbon
-
+```
 sudo cp /opt/graphite/conf/carbon.conf.example /opt/graphite/conf/carbon.conf
 sudo cp /opt/graphite/conf/storage-schemas.conf.example /opt/graphite/conf/storage-schemas.conf
 sudo cp /opt/graphite/conf/storage-aggregation.conf.example /opt/graphite/conf/storage-aggregation.conf
@@ -199,9 +214,10 @@ Check Graphite-WebApp log
 
 Check all process are running
 ps aux | grep "carbon-ca\|httpd\|(wsgi:graphite)"
-
+```
 
 # grafana
+```
 cd /usr/local/src
 sudo yum -y install initscripts fontconfig
 sudo wget https://grafanarel.s3.amazonaws.com/builds/grafana-4.0.2-1481203731.x86_64.rpm
@@ -238,9 +254,10 @@ sudo vim /etc/httpd/conf.d/grafana.conf
 
 </VirtualHost>
 sudo service httpd restart
-
+```
 
 # sensu server with uchiwa
+```
 ## redis (installing latest version as redis 2.4 has a hard-corded limit of handling multiple connections)
 # update maximum number of file handles for a single process allowed to open from 1024 to 65535 
 # https://sensuapp.org/docs/latest/installation/install-redis-on-rhel-centos.html
@@ -271,9 +288,10 @@ sudo vim /etc/sysctl.conf
 vm.overcommit_memory=1
 sudo sysctl vm.overcommit_memory=1
 sudo sysctl -w fs.file-max=65536
-
+```
 
 ## rabbit mq (erlang and rabbitmq server only, without management plugin)
+```
 https://github.com/vinodpandey/blog/tree/master/documentation/rabbitmq
 
 sudo rabbitmqctl add_vhost /sensu
@@ -326,11 +344,11 @@ sudo vim /etc/rabbitmq/rabbitmq.config
 sudo service rabbitmq-server start
 
 Ref: https://sensuapp.org/docs/0.25/reference/ssl.html
-
+```
 
 
 ## sensu core installation
-
+```
 echo '[sensu]
 name=sensu
 baseurl=http://sensu.global.ssl.fastly.net/yum/$basearch/
@@ -430,9 +448,9 @@ sudo service sensu-server stop
 Start or stop the Sensu client
 sudo service sensu-client start
 sudo service sensu-client stop
-
+```
 # uchiwa
-
+```
 sudo yum -y install uchiwa
 
 sudo vim /etc/sensu/uchiwa.json
@@ -480,18 +498,18 @@ sudo vim /etc/httpd/conf.d/uchiwa.conf
  </VirtualHost>
 
 sudo service httpd restart
-
+```
 
 ## open ports 5671 and 443 for rabbitmq and https
-
+```
 sudo iptables -I INPUT -p tcp -m tcp --dport 5671 -j ACCEPT
 sudo iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 sudo service iptables save
-
+```
 
 
 # sensu client
-
+```
 ## verify hostname is meaningful and not localhost.localdomain
 hostname
 
@@ -570,3 +588,4 @@ sudo vim /etc/sensu/conf.d/transport.json
 Start or stop the Sensu client
 sudo service sensu-client start
 sudo service sensu-client stop
+```
