@@ -312,8 +312,9 @@ sudo sysctl -w fs.file-max=100000
 sudo chkconfig --add redis_6379
 ```
 
-## rabbit mq (erlang and rabbitmq server only, without management plugin)
+## rabbit mq 
 ```
+# follow installation steps at below url (erlang and rabbitmq server only, without management plugin)
 https://github.com/vinodpandey/blog/tree/master/documentation/rabbitmq
 
 sudo rabbitmqctl add_vhost /sensu
