@@ -1,18 +1,18 @@
 Ref:
-http://blog.estl.moe/2016/08/16/pilot-your-infra-like-a-boss.html
-http://graphite.readthedocs.io/en/latest/install-virtualenv.html
-https://anomaly.io/install-graphite-centos/
-http://www.roblayton.com/2014/12/a-grafana-dashboard-for-graphite-and.html
-http://blog.airwoot.com/post/137688775104/monitoring-using-sensu-statsd-graphite-grafana
-https://ianunruh.com/2014/05/monitor-everything-part-4.html
-https://wiki.centos.org/HowTos/Https
+* http://blog.estl.moe/2016/08/16/pilot-your-infra-like-a-boss.html
+* http://graphite.readthedocs.io/en/latest/install-virtualenv.html
+* https://anomaly.io/install-graphite-centos/
+* http://www.roblayton.com/2014/12/a-grafana-dashboard-for-graphite-and.html
+* http://blog.airwoot.com/post/137688775104/monitoring-using-sensu-statsd-graphite-grafana
+* https://ianunruh.com/2014/05/monitor-everything-part-4.html
+* https://wiki.centos.org/HowTos/Https
 
 
 # Architecture
 
-sensu-server (using relay) -> carbon:2003
-Internet -> apache2:443 -> grafana:3000 -> apache2:8080 -> graphite-web
-Internet -> apache2:443 -> uchiwa:3001 -> sensu-api:4567
+sensu-server (using relay) -> carbon:2003  
+Internet -> apache2:443 -> grafana:3000 -> apache2:8080 -> graphite-web  
+Internet -> apache2:443 -> uchiwa:3001 -> sensu-api:4567  
 
 # Base setup
 ### base softwares
