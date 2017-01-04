@@ -720,5 +720,17 @@ sudo vim /etc/sensu/conf.d/metrics/varnish.json
      }
    }
  }
+ 
+ 
+#   varnishstat requires root permissions.  When running this script as a non-root
+#   user such as sensu, ensure it is run with sudo.
+#
+#   Create a file named /etc/sudoers.d/varnishstat with this line inside :
+#   sensu ALL=(ALL) NOPASSWD: /usr/bin/varnishstat
+#
+#   Fedora has some additional restrictions : if requiretty is set, sudo will only
+#   run when the user is logged in to a real tty.
+#   Then add this in the sudoers file (/etc/sudoers), below the line Defaults requiretty :
+#   Defaults sensu !requiretty
 
 ```
