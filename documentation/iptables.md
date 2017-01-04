@@ -1,6 +1,9 @@
 
 #### Opening Port
 ```sh
+# show all rules
+sudo iptables -S
+
 # opening port for specific address
 iptables -I INPUT -i eth0 -p tcp -s 172.16.100.0/24 --destination-port 3306 -j ACCEPT
 service iptables save
