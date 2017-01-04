@@ -304,7 +304,12 @@ PONG
 sudo vim /etc/sysctl.conf
 vm.overcommit_memory=1
 sudo sysctl vm.overcommit_memory=1
-sudo sysctl -w fs.file-max=65536
+sudo sysctl -w fs.file-max=100000
+
+# ulimit increase in first step above
+
+# start redis on system restart
+sudo chkconfig --add redis_6379
 ```
 
 ## rabbit mq (erlang and rabbitmq server only, without management plugin)
