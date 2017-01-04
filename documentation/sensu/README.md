@@ -626,3 +626,99 @@ sudo service sensu-client stop
 # check logs for issues
 sudo tail -f /var/log/sensu/sensu-client.log 
 ```
+
+## Checks and metrics (application wise grouping)
+```
+
+
+sudo mkdir -p /etc/sensu/conf.d/metrics
+sudo vim /etc/sensu/conf.d/metrics/memory.json
+ {
+   "checks": {
+     "metrics-memory": {
+       "type": "metric",
+       "command": "metrics-memory-percent.rb",
+       "interval": 5,
+       "subscribers": ["memory"],
+       "handlers": ["graphite_tcp"]
+     }
+   }
+ }
+sudo sensu-install -P memory-checks
+/opt/sensu/embedded/bin/metrics-memory-percent.rb
+
+
+sudo vim /etc/sensu/conf.d/metrics/cpu.json
+ {
+   "checks": {
+     "metrics-cpu": {
+       "type": "metric",
+       "command": "metrics-cpu-pcnt-usage.rb",
+       "interval": 5,
+       "subscribers": ["cpu"],
+       "handlers": ["graphite_tcp"]
+     }
+   }
+ }
+sudo sensu-install -P cpu-checks
+/opt/sensu/embedded/bin/metrics-cpu-pcnt-usage.rb
+
+
+sudo sensu-install -P sensu-plugins-apache
+/opt/sensu/embedded/bin/metrics-apache-graphite.rb -p 8080
+sudo vim /etc/sensu/conf.d/metrics/apache.json
+ {
+   "checks": {
+     "metrics-apache-8080": {
+       "type": "metric",
+       "command": "metrics-apache-graphite.rb -p 8080",
+       "interval": 5,
+       "subscribers": ["apache-8080"],
+       "handlers": ["graphite_tcp"]
+     },
+     "metrics-apache-80": {
+       "type": "metric",
+       "command": "metrics-apache-graphite.rb",
+       "interval": 5,
+       "subscribers": ["apache-80"],
+       "handlers": ["graphite_tcp"]
+     }
+   }
+ }
+
+sudo sensu-install -P sensu-plugins-memcached
+/opt/sensu/embedded/bin/metrics-memcached-graphite.rb
+/opt/sensu/embedded/bin/check-memcached-stats.rb
+sudo vim /etc/sensu/conf.d/metrics/memcached.json
+ {
+   "checks": {
+     "check-memcached": {
+       "command": "check-memcached-stats.rb",
+       "interval": 5,
+       "subscribers": ["memcached"]
+     },
+     "metrics-memcached": {
+       "type": "metric",
+       "command": "metrics-memcached-graphite.rb",
+       "interval": 5,
+       "subscribers": ["memcached"],
+       "handlers": ["graphite_tcp"]
+     }
+   }
+ }
+
+sudo sensu-install -P sensu-plugins-varnish
+/opt/sensu/embedded/bin/metrics-varnish.rb
+sudo vim /etc/sensu/conf.d/metrics/varnish.json
+ {
+     "metrics-varnish": {
+       "type": "metric",
+       "command": "metrics-varnish.rb",
+       "interval": 5,
+       "subscribers": ["varnish"],
+       "handlers": ["graphite_tcp"]
+     }
+   }
+ }
+
+```
