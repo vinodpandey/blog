@@ -713,7 +713,7 @@ sudo vim /etc/sensu/conf.d/metrics/varnish.json
  {
      "metrics-varnish": {
        "type": "metric",
-       "command": "metrics-varnish.rb",
+       "command": "sudo /opt/sensu/embedded/bin/metrics-varnish.rb",
        "interval": 5,
        "subscribers": ["varnish"],
        "handlers": ["graphite_tcp"]
@@ -725,12 +725,13 @@ sudo vim /etc/sensu/conf.d/metrics/varnish.json
 #   varnishstat requires root permissions.  When running this script as a non-root
 #   user such as sensu, ensure it is run with sudo.
 #
-#   Create a file named /etc/sudoers.d/varnishstat with this line inside :
-#   sensu ALL=(ALL) NOPASSWD: /usr/bin/varnishstat
-#
-#   Fedora has some additional restrictions : if requiretty is set, sudo will only
-#   run when the user is logged in to a real tty.
-#   Then add this in the sudoers file (/etc/sudoers), below the line Defaults requiretty :
-#   Defaults sensu !requiretty
+#   Create a file named /etc/sudoers.d/sensu with this line inside :
+
+Defaults:sensu !requiretty
+
+Defaults:sensu secure_path="/opt/sensu/embedded/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+sensu ALL = NOPASSWD: /opt/sensu/embedded/bin/metrics-varnish.rb
+
 
 ```
