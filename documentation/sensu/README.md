@@ -186,6 +186,7 @@ sudo sealert -a /var/log/audit/audit.log
 sudo semodule -i mypol.pp
 
 sudo service httpd restart
+
 ```
 
 ### configuring carbon
@@ -262,6 +263,13 @@ Success message should be displayed
 # change admin username, password and email
 Admin > Profile - Information, Change Password
 
+# disable user signups
+sudo vim /etc/grafana/grafana.ini 
+[users]
+# disable user signup / registration
+allow_sign_up = false
+
+sudo service grafana-server restart
 
 ```
 
