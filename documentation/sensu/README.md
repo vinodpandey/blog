@@ -233,20 +233,9 @@ sudo rpm -Uvh grafana-4.0.2-1481203731.x86_64.rpm
 sudo /sbin/chkconfig --add grafana-server
 
 sudo service grafana-server start
+
 http://localhost:3000 
 admin:admin
-
-# graphite integration
-Menu > Data source > Add datasource
-Name: graphite
-Type: Graphite
-Url: http://localhost:8080
-Access: Proxy
-Save & Test
-Success message should be displayed
-
-# change admin username, password and email
-Admin > Profile - Information, Change Password
 
 # https virtualhost
 sudo vim /etc/httpd/conf.d/grafana.conf
@@ -260,6 +249,20 @@ sudo vim /etc/httpd/conf.d/grafana.conf
 
 </VirtualHost>
 sudo service httpd restart
+
+# graphite integration
+Menu > Data source > Add datasource
+Name: graphite
+Type: Graphite
+Url: http://localhost:8080
+Access: Proxy
+Save & Test
+Success message should be displayed
+
+# change admin username, password and email
+Admin > Profile - Information, Change Password
+
+
 ```
 
 # sensu server with uchiwa
