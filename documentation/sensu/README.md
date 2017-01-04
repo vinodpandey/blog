@@ -109,6 +109,9 @@ cd mod_wsgi-4.5.11/
 make
 sudo make install
 module location: /usr/lib64/httpd/modules/mod_wsgi.so
+
+# start httpd on system restart
+sudo chkconfig httpd on
 ```
 
 ### Installing Graphite
@@ -214,6 +217,9 @@ Check Graphite-WebApp log
 
 Check all process are running
 ps aux | grep "carbon-ca\|httpd\|(wsgi:graphite)"
+
+# start carbon-cache on system restart
+sudo chkconfig --levels 235 carbon-cache on
 ```
 
 # grafana
