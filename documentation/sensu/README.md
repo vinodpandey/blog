@@ -734,4 +734,20 @@ Defaults:sensu secure_path="/opt/sensu/embedded/bin:/usr/local/sbin:/usr/local/b
 sensu ALL = NOPASSWD: /opt/sensu/embedded/bin/metrics-varnish.rb
 
 
+yum -y install gcc-c++
+sensu-install -P sensu-plugins-http
+
+/opt/sensu/embedded/bin/check-http.rb -u http://example.com
+
+sudo vim /etc/sensu/conf.d/metrics/website.json
+{
+   "checks": {
+     "check-website": {
+       "command": "check-http.rb -u http://example.com",
+       "interval": 5,
+       "subscribers": ["website"]
+     }
+   }
+ }
+
 ```
