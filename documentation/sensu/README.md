@@ -617,6 +617,23 @@ sudo vim /etc/sensu/conf.d/transport.json
 }
 
 
+# slack notification
+sensu-install -P sensu-plugins-slack
+sudo vim /etc/sensu/conf.d/slack.json
+{
+  "handlers": {
+        "slack": {
+            "type": "pipe",
+            "command": "/opt/sensu/embedded/bin/handler-slack.rb",
+            "severities": ["critical"]
+        }
+  },
+  "slack": {
+    "webhook_url": "https://hooks.slack.com/services/xxxx/ooooooooo/xxxxxxx",
+    "channel": "#dev-ops"
+  }
+}
+
 
 
 Start or stop the Sensu client
@@ -749,5 +766,6 @@ sudo vim /etc/sensu/conf.d/metrics/website.json
      }
    }
  }
+
 
 ```
