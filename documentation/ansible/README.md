@@ -1,0 +1,4 @@
+# Installation
+```
+brew install ansible
+```
