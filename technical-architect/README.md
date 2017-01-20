@@ -4,3 +4,6 @@
 
 ### Visio alternative
 * https://www.lucidchart.com
+
+### Computer Architecture Essentials | James Reinders, former Intel Director
+* https://www.youtube.com/watch?v=yOa0WpMwzWk
