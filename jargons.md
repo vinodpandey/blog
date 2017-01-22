@@ -7,3 +7,4 @@
 | CAP theorem | https://en.wikipedia.org/wiki/CAP_theorem |
 | Two Hard Things | http://martinfowler.com/bliki/TwoHardThings.html |
 | Benevolent Dictator For Life (BDFL) | https://en.wikipedia.org/wiki/Benevolent_dictator_for_life |
+| Bus factor | https://en.wikipedia.org/wiki/Bus_factor The bus factor is a measurement of the risk resulting from information and capabilities not being shared among team members, from the phrase "in case they get hit by a bus". |
